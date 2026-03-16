@@ -59,33 +59,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-form-card shadow-md">
-            <h2 className="mb-3">Kirim Pertanyaan</h2>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="form-group">
-                <label>Nama</label>
-                <input type="text" placeholder="Nama lengkap Anda" required />
-              </div>
-              <div className="form-group">
-                <label>Alamat Email</label>
-                <input type="email" placeholder="Alamat email Anda" required />
-              </div>
-              <div className="form-group">
-                <label>Jenis Pertanyaan</label>
-                <select defaultValue="Pertanyaan Umum">
-                  <option value="Pertanyaan Umum">Pertanyaan Umum</option>
-                  <option value="Dukungan Pesanan">Dukungan Pesanan</option>
-                  <option value="Pesanan Grosir">Pesanan Grosir</option>
-                  <option value="Kemitraan">Kemitraan</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label>Pesan</label>
-                <textarea rows={5} placeholder="Bagaimana kami bisa membantu Anda?" required></textarea>
-              </div>
-              <button className="btn btn-primary" type="submit" style={{width: '100%'}}>Kirim Pesan</button>
-            </form>
-          </div>
+
 
         </div>
       </section>
