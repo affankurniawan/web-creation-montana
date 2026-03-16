@@ -13,9 +13,7 @@ export default function Header({ setPage }) {
 
         {/* Logo */}
         <div className="logo" onClick={() => setPage('home')} style={{cursor: 'pointer'}}>
-          <span style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            MONTANA
-          </span>
+          <img src="/logo.png" alt="Montana Logo" className="header-logo" />
         </div>
 
         {/* Desktop Navigation */}

@@ -1,9 +1,15 @@
 .header {
-  border-bottom: 1px solid var(--color-gray-200);
-  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-800);
+  background-color: var(--color-black);
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.header-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header-container {
@@ -16,7 +22,7 @@
 .mobile-menu-btn {
   display: none;
   background: none;
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 .desktop-nav {
@@ -28,7 +34,7 @@
 .desktop-nav a {
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 .desktop-nav a:hover {
@@ -43,7 +49,7 @@
 
 .icon-btn {
   background: none;
-  color: var(--color-black);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
