@@ -6,8 +6,8 @@ export default function Home({ setPage }) {
     hero: 'https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=1200&q=80',
     school: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
     office: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80',
-    prod1: 'https://images.unsplash.com/photo-1583485088034-697b5a69fdd9?w=600&q=80',
-    prod2: 'https://images.unsplash.com/photo-1522881113591-baf82881eb50?w=600&q=80',
+    prod1: '/pen-set.png',
+    prod2: '/notebook.png',
     prod3: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&q=80',
     prod4: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80'
   };
