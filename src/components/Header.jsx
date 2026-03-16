@@ -18,11 +18,11 @@ export default function Header({ setPage }) {
 
         {/* Desktop Navigation */}
         <nav className="desktop-nav">
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('home'); }}>Home</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); }}>About Us</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>Product</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('home'); }}>Beranda</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); }}>Tentang Kami</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>Produk</a>
           <a href="#">Blog</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); }}>Contact Us</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); }}>Hubungi Kami</a>
         </nav>
 
         {/* Icons */}

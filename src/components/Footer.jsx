@@ -7,39 +7,39 @@ export default function Footer({ setPage }) {
         <div className="footer-brand">
           <h2 className="text-white">MONTANA</h2>
           <p className="text-gray" style={{ color: '#ADB5BD', maxWidth: '300px' }}>
-            Better tools for a smarter generation. Durable, practical essentials at smart prices.
+            Alat yang lebih baik untuk generasi yang lebih cerdas. Kebutuhan yang tahan lama dan praktis dengan harga cerdas.
           </p>
         </div>
         
         <div className="footer-links">
           <div className="footer-column">
-            <h3>Shop</h3>
-            <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>All Products</a>
-            <a href="#">Best Sellers</a>
-            <a href="#">School Essentials</a>
-            <a href="#">Office Supplies</a>
+            <h3>Belanja</h3>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>Semua Produk</a>
+            <a href="#">Terlaris</a>
+            <a href="#">Kebutuhan Sekolah</a>
+            <a href="#">Perlengkapan Kantor</a>
           </div>
           
           <div className="footer-column">
             <h3>Brand</h3>
-            <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); }}>About Us</a>
-            <a href="#">Our Mission</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); }}>Tentang Kami</a>
+            <a href="#">Misi Kami</a>
             <a href="#">Blog</a>
           </div>
           
           <div className="footer-column">
-            <h3>Support</h3>
-            <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); }}>Contact Us</a>
-            <a href="#">Bulk Order Inquiry</a>
-            <a href="#">FAQ & Returns</a>
+            <h3>Dukungan</h3>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); }}>Hubungi Kami</a>
+            <a href="#">Pertanyaan Pesanan Grosir</a>
+            <a href="#">FAQ & Pengembalian</a>
           </div>
         </div>
       </div>
       <div className="footer-bottom container">
-        <p>&copy; {new Date().getFullYear()} Montana. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Montana. Hak cipta dilindungi undang-undang.</p>
         <div className="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat & Ketentuan</a>
         </div>
       </div>
     </footer>

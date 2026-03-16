@@ -10,9 +10,9 @@ export default function About({ setPage }) {
       {/* Hero */}
       <section className="about-hero section bg-gray text-center">
         <div className="container">
-          <h1 className="mb-2">We believe good tools should not be out of reach.</h1>
+          <h1 className="mb-2">Kami percaya alat yang baik tidak boleh sulit dijangkau.</h1>
           <p className="subtitle mx-auto text-black-80">
-            Montana is a smart-value brand designed to make high-quality everyday products more accessible to this generation.
+            Montana adalah merek bernilai cerdas yang dirancang untuk membuat produk sehari-hari berkualitas tinggi lebih mudah diakses oleh generasi ini.
           </p>
         </div>
       </section>
@@ -24,10 +24,10 @@ export default function About({ setPage }) {
              <img src={heroImg} alt="Students studying" className="rounded-shadow" />
           </div>
           <div className="text-content">
-            <h2 className="mb-2">Our Origin</h2>
-            <p>Montana was built on a simple belief: better tools create better habits, and better habits build a smarter generation.</p>
-            <p>In school, at work, at home, and in small businesses, people rely on everyday essentials to write, organize, learn, prepare, and keep moving. We noticed that high-quality options were often too expensive, while affordable options broke too quickly.</p>
-            <p><strong>Montana exists to solve this.</strong> We make essentials durable, reliable, and affordable so people can make smarter choices every day without feeling forced to choose between quality and price.</p>
+            <h2 className="mb-2">Asal Usul Kami</h2>
+            <p>Montana dibangun dengan keyakinan sederhana: alat yang lebih baik menciptakan kebiasaan yang lebih baik, dan kebiasaan yang lebih baik membangun generasi yang lebih cerdas.</p>
+            <p>Di sekolah, di tempat kerja, di rumah, dan di usaha kecil, orang mengandalkan kebutuhan sehari-hari untuk menulis, mengatur, belajar, bersiap, dan terus bergerak. Kami menyadari bahwa pilihan berkualitas tinggi seringkali terlalu mahal, sementara pilihan yang terjangkau terlalu cepat rusak.</p>
+            <p><strong>Montana hadir untuk menyelesaikan ini.</strong> Kami membuat kebutuhan dasar yang tahan lama, dapat diandalkan, dan terjangkau sehingga orang dapat membuat pilihan yang lebih cerdas setiap hari tanpa merasa harus memilih antara kualitas dan harga.</p>
           </div>
         </div>
       </section>
@@ -37,18 +37,18 @@ export default function About({ setPage }) {
         <div className="container grid grid-cols-3 gap-4 mobile-grid-cols-1">
           <div className="mission-card">
             <Target className="text-yellow mb-2" size={40} />
-            <h3 className="text-white mt-2">Mission</h3>
-            <p className="text-gray-300">Make reliable everyday essentials more reachable for this generation through fair pricing and quality that lasts.</p>
+            <h3 className="text-white mt-2">Misi</h3>
+            <p className="text-gray-300">Membuat kebutuhan sehari-hari yang dapat diandalkan lebih mudah dijangkau bagi generasi ini melalui harga yang wajar dan kualitas yang tahan lama.</p>
           </div>
           <div className="mission-card">
             <Lightbulb className="text-yellow mb-2" size={40} />
-            <h3 className="text-white mt-2">Vision</h3>
-            <p className="text-gray-300">Contribute to a smarter generation and grow that impact toward education-building initiatives such as schools in the future.</p>
+            <h3 className="text-white mt-2">Visi</h3>
+            <p className="text-gray-300">Berkontribusi kepada generasi yang lebih cerdas dan mengembangkan dampak tersebut menuju inisiatif pembangunan pendidikan seperti sekolah di masa depan.</p>
           </div>
           <div className="mission-card">
             <TrendingUp className="text-yellow mb-2" size={40} />
-            <h3 className="text-white mt-2">Promise</h3>
-            <p className="text-gray-300">Good tools should not be out of reach. A practical daily brand that respects both ambition and budget.</p>
+            <h3 className="text-white mt-2">Janji</h3>
+            <p className="text-gray-300">Alat yang baik tidak boleh sulit dijangkau. Merek praktis sehari-hari yang menghormati ambisi dan anggaran.</p>
           </div>
         </div>
       </section>
@@ -57,10 +57,10 @@ export default function About({ setPage }) {
       <section className="section bg-gray">
         <div className="container grid grid-cols-2 gap-4 items-center founder-section">
           <div className="text-content pr-4">
-            <h2 className="mb-2">The Bigger Journey</h2>
-            <p>"Some people think everyday products are small things. We do not. Every pen, marker, scissor, and daily essential can support better habits, better learning, and better work."</p>
-            <p>This is our first step: helping this generation make smarter choices every day. Over time, we dream of growing that impact into something even bigger for education—like funding schools and building learning centers.</p>
-            <p className="founder-signoff mt-4"><strong>— The Montana Founders</strong></p>
+            <h2 className="mb-2">Perjalanan yang Lebih Besar</h2>
+            <p>"Sebagian orang berpikir produk sehari-hari adalah hal kecil. Kami tidak. Setiap pena, spidol, gunting, dan kebutuhan sehari-hari dapat mendukung kebiasaan yang lebih baik, pembelajaran yang lebih baik, dan pekerjaan yang lebih baik."</p>
+            <p>Ini adalah langkah pertama kami: membantu generasi ini membuat pilihan yang lebih cerdas setiap hari. Seiring berjalannya waktu, kami bermimpi untuk mengembangkan dampak tersebut menjadi sesuatu yang lebih besar untuk pendidikan—seperti mendanai sekolah dan membangun pusat pembelajaran.</p>
+            <p className="founder-signoff mt-4"><strong>— Pendiri Montana</strong></p>
           </div>
           <div className="founder-visual">
             <img src={founderImg} alt="Montana Founder" className="founder-img" />
@@ -71,8 +71,8 @@ export default function About({ setPage }) {
       {/* CTA */}
       <section className="section text-center text-white pb-mb-0" style={{ backgroundColor: 'var(--color-blue)', padding: 'var(--spacing-3xl) 0' }}>
         <div className="container">
-          <h2 className="mb-3" style={{ color: 'white' }}>Start Making Smarter Choices</h2>
-          <button className="btn btn-primary" onClick={() => setPage('product')}>Shop Essentials</button>
+          <h2 className="mb-3" style={{ color: 'white' }}>Mulai Membuat Pilihan Lebih Cerdas</h2>
+          <button className="btn btn-primary" onClick={() => setPage('product')}>Belanja Kebutuhan</button>
         </div>
       </section>
     </main>

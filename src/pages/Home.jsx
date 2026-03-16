@@ -19,11 +19,11 @@ export default function Home({ setPage }) {
         <div className="hero-bg" style={{ backgroundImage: `url(${images.hero})` }}></div>
         <div className="container hero-content">
           <div className="hero-text-box">
-            <h1>Be Smart with <span className="text-yellow">Montana</span></h1>
-            <p className="hero-subtitle">Quality that works. Value that makes sense. Durable essentials at smart prices.</p>
+            <h1>Cerdas Bersama <span className="text-yellow">Montana</span></h1>
+            <p className="hero-subtitle">Kualitas yang terbukti. Nilai yang masuk akal. Kebutuhan tahan lama dengan harga cerdas.</p>
             <div className="hero-actions">
               <button className="btn btn-primary" onClick={() => setPage('product')}>
-                Shop Essentials <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+                Belanja Kebutuhan <ArrowRight size={18} style={{ marginLeft: '8px' }} />
               </button>
             </div>
           </div>
@@ -33,30 +33,30 @@ export default function Home({ setPage }) {
       {/* 2. Value Strip */}
       <section className="value-strip bg-black section py-md">
         <div className="container flex value-grid">
-          <div className="value-item"><ShieldCheck className="value-icon" /> <span>Durable Quality</span></div>
-          <div className="value-item"><Star className="value-icon" /> <span>Affordable Value</span></div>
-          <div className="value-item"><CheckCircle2 className="value-icon" /> <span>Practical Design</span></div>
-          <div className="value-item"><Bookmark className="value-icon" /> <span>Everyday-ready</span></div>
+          <div className="value-item"><ShieldCheck className="value-icon" /> <span>Kualitas Tahan Lama</span></div>
+          <div className="value-item"><Star className="value-icon" /> <span>Nilai Terjangkau</span></div>
+          <div className="value-item"><CheckCircle2 className="value-icon" /> <span>Desain Praktis</span></div>
+          <div className="value-item"><Bookmark className="value-icon" /> <span>Siap Setiap Hari</span></div>
         </div>
       </section>
 
       {/* 3. Shop by Use */}
       <section className="section bg-gray">
         <div className="container">
-          <h2 className="text-center mb-4">Shop by Use</h2>
+          <h2 className="text-center mb-4">Belanja Berdasarkan Kebutuhan</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="use-card" onClick={() => setPage('product')}>
               <div className="use-img" style={{ backgroundImage: `url(${images.school})` }}></div>
               <div className="use-info">
-                <h3>School</h3>
-                <p>Reliable basics for the semester.</p>
+                <h3>Sekolah</h3>
+                <p>Kebutuhan dasar yang dapat diandalkan untuk semester ini.</p>
               </div>
             </div>
             <div className="use-card" onClick={() => setPage('product')}>
               <div className="use-img" style={{ backgroundImage: `url(${images.office})` }}></div>
               <div className="use-info">
-                <h3>Office</h3>
-                <p>Neat, dependable, and efficient.</p>
+                <h3>Kantor</h3>
+                <p>Rapi, dapat diandalkan, dan efisien.</p>
               </div>
             </div>
           </div>
@@ -67,8 +67,8 @@ export default function Home({ setPage }) {
       <section className="section pb-0">
         <div className="container">
           <div className="section-header flex justify-between items-center mb-4">
-            <h2>Featured Essentials</h2>
-            <button className="btn btn-outline" onClick={() => setPage('product')}>View All</button>
+            <h2>Produk Unggulan</h2>
+            <button className="btn btn-outline" onClick={() => setPage('product')}>Lihat Semua</button>
           </div>
           
           <div className="grid grid-cols-4 gap-3 product-grid">
@@ -85,7 +85,7 @@ export default function Home({ setPage }) {
                 <div className="product-info">
                   <h4>{product.name}</h4>
                   <span className="price">{product.price}</span>
-                  <button className="btn btn-primary add-to-cart-btn btn-sm">Add to Cart</button>
+                  <button className="btn btn-primary add-to-cart-btn btn-sm">Tambah ke Keranjang</button>
                 </div>
               </div>
             ))}
@@ -97,12 +97,12 @@ export default function Home({ setPage }) {
       <section className="section why-montana">
         <div className="container grid grid-cols-2 gap-4 items-center">
           <div className="why-text">
-            <h2>Why Montana?</h2>
-            <p>We believe good tools should not be out of reach. Montana is a smart-value brand designed to make high-quality everyday products more accessible.</p>
+            <h2>Mengapa Montana?</h2>
+            <p>Kami percaya alat yang baik tidak boleh sulit dijangkau. Montana adalah merek bernilai cerdas yang dirancang untuk membuat produk sehari-hari berkualitas tinggi lebih mudah diakses.</p>
             <ul className="why-list">
-              <li><strong>Built to last:</strong> Durable essentials for real daily use.</li>
-              <li><strong>Smart value:</strong> Quality that makes sense for the price.</li>
-              <li><strong>Functional:</strong> Clean presentation and trustworthy performance.</li>
+              <li><strong>Tahan lama:</strong> Kebutuhan tahan lama untuk penggunaan sehari-hari.</li>
+              <li><strong>Nilai cerdas:</strong> Kualitas yang sepadan dengan harganya.</li>
+              <li><strong>Fungsional:</strong> Presentasi bersih dan kinerja tepercaya.</li>
             </ul>
           </div>
           <div className="why-visual">
@@ -114,24 +114,24 @@ export default function Home({ setPage }) {
       {/* 6. Purpose Strip */}
       <section className="section bg-yellow text-center purpose-strip">
         <div className="container">
-          <h2 className="mb-2">Better tools for a smarter generation.</h2>
+          <h2 className="mb-2">Alat yang lebih baik untuk generasi yang lebih cerdas.</h2>
           <p className="purpose-text mb-3 text-black-80">
-            Every pen, marker, and daily essential can support better habits. 
-            By making smart tools accessible, we are building a foundation for a broader educational impact.
+            Setiap pena, spidol, dan kebutuhan sehari-hari dapat mendukung kebiasaan yang lebih baik. 
+            Dengan membuat alat cerdas lebih mudah diakses, kami membangun fondasi untuk dampak pendidikan yang lebih luas.
           </p>
-          <button className="btn btn-secondary" onClick={() => setPage('about')}>Our Mission</button>
+          <button className="btn btn-secondary" onClick={() => setPage('about')}>Misi Kami</button>
         </div>
       </section>
 
       {/* 7. Testimonials */}
       <section className="section bg-gray">
         <div className="container">
-          <h2 className="mb-4 text-center">Loved by Doers</h2>
+          <h2 className="mb-4 text-center">Dipercaya Pengguna</h2>
           <div className="grid grid-cols-3 gap-3">
             {[
-              { quote: "Finally a pen that doesn't bleed through and lasts all semester. Amazing value.", author: "Ayu T., Student" },
-              { quote: "We stocked our entire accounting office with Montana. Look premium, doesn't break the bank.", author: "Budi P., Office Manager" },
-              { quote: "Perfect for my kids' back-to-school list. Durable enough to survive a whole year.", author: "Siti K., Mother of two" }
+              { quote: "Akhirnya ada pena yang tintanya tidak tembus dan tahan satu semester. Sangat sepadan.", author: "Ayu T., Mahasiswa" },
+              { quote: "Kami melengkapi seluruh kantor dengan Montana. Terlihat premium tanpa bikin kantong jebol.", author: "Budi P., Manajer Kantor" },
+              { quote: "Sempurna untuk perlengkapan sekolah anak-anak. Cukup awet untuk dipakai setahun penuh.", author: "Siti K., Ibu" }
             ].map((t, i) => (
               <div className="testimonial-card" key={i}>
                 <div className="stars"><Star size={16} fill="var(--color-yellow)" color="var(--color-yellow)" /><Star size={16} fill="var(--color-yellow)" color="var(--color-yellow)" /><Star size={16} fill="var(--color-yellow)" color="var(--color-yellow)" /><Star size={16} fill="var(--color-yellow)" color="var(--color-yellow)" /><Star size={16} fill="var(--color-yellow)" color="var(--color-yellow)" /></div>
@@ -147,9 +147,9 @@ export default function Home({ setPage }) {
       <section className="section text-center cta-section">
         <div className="container">
           <Briefcase size={40} className="mb-2 mx-auto text-blue" />
-          <h2>Bulk Orders & Retail Partnerships</h2>
-          <p className="mb-3">Stock Montana in your store or supply your entire office with smart value.</p>
-          <button className="btn btn-primary" onClick={() => setPage('contact')}>Get in Touch</button>
+          <h2>Pesanan Grosir & Kemitraan Ritel</h2>
+          <p className="mb-3">Sediakan Montana di toko Anda atau lengkapi seluruh kantor Anda dengan nilai yang cerdas.</p>
+          <button className="btn btn-primary" onClick={() => setPage('contact')}>Hubungi Kami</button>
         </div>
       </section>
 
