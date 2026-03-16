@@ -1,0 +1,163 @@
+.product-page {
+  padding-bottom: var(--spacing-3xl);
+  min-height: 80vh;
+}
+
+.proof-strip {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--spacing-3xl);
+  padding-top: var(--spacing-2xl);
+}
+
+/* Sidebar */
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-500);
+}
+
+.filter-header {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--color-black);
+}
+
+.filter-list {
+  list-style: none;
+}
+
+.filter-list li {
+  padding: 0.5rem 0;
+  color: #4a4a4a;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.filter-list li:hover {
+  color: var(--color-blue);
+}
+
+.filter-list li.active {
+  font-weight: 700;
+  color: var(--color-black);
+  position: relative;
+}
+.filter-list li.active::before {
+  content: '→';
+  position: absolute;
+  left: -20px;
+  color: var(--color-yellow);
+}
+
+/* Main Product Area */
+.sort-dropdown select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+}
+
+.catalog-product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-product-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+.badge-best-seller { background-color: var(--color-yellow); color: var(--color-black); }
+.badge-new-arrival { background-color: var(--color-blue); color: var(--color-white); }
+.badge-promo { background-color: var(--color-red); color: var(--color-white); }
+.badge-bulk-save { background-color: var(--color-black); color: var(--color-white); }
+
+.p-3 { padding: 1rem; }
+.text-yellow { color: #d0a320; } /* slightly darker yellow for text readability */
+.font-bold { font-weight: 700; }
+.text-lg { font-size: 1.1rem; }
+
+.pagination {
+  gap: 0.5rem;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.page-btn:hover {
+  background-color: var(--color-gray-100);
+}
+
+.page-btn.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.page-btn.next {
+  width: auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 200px 1fr;
+    gap: var(--spacing-lg);
+  }
+  .product-grid-catalog { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+  .product-sidebar { display: none; /* In a real app, this would be a toggle */ }
+  .product-grid-catalog { grid-template-columns: 1fr; }
+}
