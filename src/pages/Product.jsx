@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Search, Filter, ShieldCheck, Tag } from 'lucide-react';
 import './Product.css';
 
-export default function Product() {
-  const [activeCategory, setActiveCategory] = useState('All');
-  const [activeNeed, setActiveNeed] = useState('All');
+export default function Product({ setPage, addToCart }) {
+  const [activeCategory, setActiveCategory] = useState('Semua');
+  const [activeNeed, setActiveNeed] = useState('Semua');
 
   const categories = ['Semua', 'Produk Baru', 'Paket Bundel', 'Kalkulator', 'Spidol', 'Pulpen', 'Gunting', 'Lem'];
   const needs = ['Semua', 'Sekolah', 'Kantor', 'Rumah', 'Bisnis'];
@@ -90,7 +90,7 @@ export default function Product() {
                 <div className="product-info flex flex-col items-center text-center p-3">
                   <h4>{product.name}</h4>
                   <span className="price mb-2 text-yellow font-bold text-lg">{product.price}</span>
-                  <button className="btn btn-outline" style={{width: '100%', padding: '0.5rem'}}>Tambah +</button>
+                  <button className="btn btn-outline" style={{width: '100%', padding: '0.5rem'}} onClick={() => addToCart(product)}>Tambah +</button>
                 </div>
               </div>
             ))}

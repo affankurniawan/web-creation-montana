@@ -1,7 +1,7 @@
 import { ArrowRight, Star, ShieldCheck, CheckCircle2, Bookmark, Briefcase } from 'lucide-react';
 import './Home.css';
 
-export default function Home({ setPage }) {
+export default function Home({ setPage, addToCart }) {
   const images = {
     hero: '/banner.webp',
     school: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
@@ -20,9 +20,7 @@ export default function Home({ setPage }) {
         <div className="container hero-content">
           <div className="hero-text-box">
             <div className="hero-actions custom-cta-positioning">
-              <button className="btn btn-primary" onClick={() => setPage('product')}>
-                Belanja Kebutuhan <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-              </button>
+              <button className="btn btn-primary cta-btn" onClick={() => addToCart({ id: 1, name: 'MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P', img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png', price: 'Rp 0' })}>Belanja Kebutuhan</button>
             </div>
           </div>
         </div>
@@ -83,7 +81,7 @@ export default function Home({ setPage }) {
                 <div className="product-info">
                   <h4>{product.name}</h4>
                   <span className="price">{product.price}</span>
-                  <button className="btn btn-primary add-to-cart-btn btn-sm">Tambah ke Keranjang</button>
+                  <button className="btn btn-primary add-to-cart-btn btn-sm" onClick={() => addToCart(product)}>Tambah ke Keranjang</button>
                 </div>
               </div>
             ))}

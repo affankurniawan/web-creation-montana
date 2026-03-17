@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ShoppingCart, Menu, Search, X } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ page, setPage }) {
+export default function Header({ page, setPage, cartCount, onCartClick }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -59,9 +59,9 @@ export default function Header({ page, setPage }) {
           <button className="icon-btn" onClick={() => setIsSearchOpen(!isSearchOpen)}>
             {isSearchOpen ? <X size={20} /> : <Search size={20} />}
           </button>
-          <button className="icon-btn cart-btn">
+          <button className="icon-btn cart-btn" onClick={onCartClick}>
             <ShoppingCart size={20} />
-            <span className="cart-badge">0</span>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </button>
         </div>
 
