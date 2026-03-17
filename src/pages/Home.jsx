@@ -3,7 +3,7 @@ import './Home.css';
 
 export default function Home({ setPage }) {
   const images = {
-    hero: 'https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=1200&q=80',
+    hero: '/banner.webp',
     school: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
     office: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80',
     prod1: '/pen-set.png',
@@ -19,9 +19,7 @@ export default function Home({ setPage }) {
         <div className="hero-bg" style={{ backgroundImage: `url(${images.hero})` }}></div>
         <div className="container hero-content">
           <div className="hero-text-box">
-            <h1>Cerdas Bersama <span className="text-yellow">Montana</span></h1>
-            <p className="hero-subtitle">Kualitas yang terbukti. Nilai yang masuk akal. Kebutuhan tahan lama dengan harga cerdas.</p>
-            <div className="hero-actions">
+            <div className="hero-actions" style={{ marginTop: '280px' }}>
               <button className="btn btn-primary" onClick={() => setPage('product')}>
                 Belanja Kebutuhan <ArrowRight size={18} style={{ marginLeft: '8px' }} />
               </button>
