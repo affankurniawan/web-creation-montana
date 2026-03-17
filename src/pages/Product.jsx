@@ -14,10 +14,6 @@ export default function Product() {
     { id: 2, name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail', img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png', price: 'Rp 0', tag: 'Promo', category: 'Spidol' },
     { id: 3, name: 'MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail', img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp', price: 'Rp 0', tag: 'Terbaru', category: 'Lem' },
     { id: 4, name: 'MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail', img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp', price: 'Rp 0', tag: 'Promo', category: 'Gunting' },
-    { id: 5, name: 'Montana Highlighters Set', img: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&q=80', price: 'Rp 28.000', tag: '', category: 'Spidol' },
-    { id: 6, name: 'Standard Sticky Notes', img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&q=80', price: 'Rp 22.000', tag: '', category: 'Semua' },
-    { id: 7, name: 'Whiteboard Marker Box', img: 'https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400&q=80', price: 'Rp 65.000', tag: 'Hemat Grosir', category: 'Spidol' },
-    { id: 8, name: 'Montana Pro Pen Set', img: 'https://images.unsplash.com/photo-1583485088034-697b5a69fdd9?w=400&q=80', price: 'Rp 45.000', tag: '', category: 'Pulpen' },
   ];
 
   return (
