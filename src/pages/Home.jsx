@@ -19,7 +19,7 @@ export default function Home({ setPage }) {
         <div className="hero-bg" style={{ backgroundImage: `url(${images.hero})` }}></div>
         <div className="container hero-content">
           <div className="hero-text-box">
-            <div className="hero-actions" style={{ marginTop: '390px', marginLeft: '140px' }}>
+            <div className="hero-actions" style={{ marginTop: '410px', display: 'flex', justifyContent: 'center', width: '510px', marginLeft: '30px' }}>
               <button className="btn btn-primary" onClick={() => setPage('product')}>
                 Belanja Kebutuhan <ArrowRight size={18} style={{ marginLeft: '8px' }} />
               </button>
