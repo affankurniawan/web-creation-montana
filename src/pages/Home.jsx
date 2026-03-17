@@ -117,7 +117,6 @@ export default function Home({ setPage }) {
             Setiap pena, spidol, dan kebutuhan sehari-hari dapat mendukung kebiasaan yang lebih baik. 
             Dengan membuat alat cerdas secara lebih mudah diakses, kami membangun fondasi untuk kemajuan di dunia pendidikan maupun perkantoran.
           </p>
-          <button className="btn btn-secondary" onClick={() => setPage('about')}>Misi Kami</button>
         </div>
       </section>
 
