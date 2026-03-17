@@ -21,9 +21,9 @@ export default function Product({ setPage, addToCart }) {
     <main className="product-page bg-gray-50">
       
       {/* Proof Strip */}
-      <div className="proof-strip bg-black text-white py-2 text-center text-sm">
+      <div className="proof-strip bg-yellow text-black py-2 text-center text-sm font-bold">
         <span className="flex items-center justify-center gap-2">
-           <ShieldCheck size={16} className="text-yellow" /> Kualitas Tahan Lama. Harga Terjangkau. Dibuat untuk Kemajuan Sehari-hari.
+           <ShieldCheck size={16} /> Kualitas Tahan Lama. Harga Terjangkau. Dibuat untuk Kemajuan Sehari-hari.
         </span>
       </div>
 

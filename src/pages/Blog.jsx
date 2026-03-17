@@ -35,10 +35,10 @@ export default function Blog() {
     <main className="blog-page bg-gray-50">
       
       {/* Blog Hero Section */}
-      <section className="blog-hero bg-black text-white text-center py-5">
+      <section className="blog-hero bg-gray-50 text-black text-center pb-2 border-bottom">
         <div className="container">
-          <h1 className="mb-2">Jurnal Montana</h1>
-          <p className="text-gray-300 max-w-600 mx-auto">
+          <h1 className="mb-2 text-black">Jurnal Montana</h1>
+          <p className="text-gray-600 max-w-600 mx-auto">
             Temukan wawasan terbaru, tips produktivitas, dan pembaruan inovatif seputar dunia alat tulis dan kebutuhan kantor.
           </p>
         </div>

@@ -327,10 +327,28 @@
   .value-grid { grid-template-columns: 1fr 1fr; display: grid; gap: var(--spacing-md); }
 }
 
-/* Custom CTA Positioning for Hero */
+/* Custom CTA Positioning & Styling for Hero */
 .custom-cta-positioning {
   margin-top: 430px;
   margin-left: 110px;
+}
+
+.cta-btn {
+  font-size: 1.15rem;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: pulse-glow 2s infinite alternate;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.6), 0 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.1); }
+  100% { box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6), 0 0 0 4px rgba(255, 255, 255, 0.2); }
 }
 
 @media (max-width: 1024px) {

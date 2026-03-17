@@ -4,10 +4,10 @@ import './Contact.css';
 export default function Contact() {
   return (
     <main className="contact-page bg-gray-50">
-      <section className="section bg-black text-white text-center pb-2">
+      <section className="section bg-gray-50 text-black text-center pb-2 border-bottom">
         <div className="container">
-          <h1 className="text-white mb-2">Hubungi Kami</h1>
-          <p className="text-gray-300 mx-auto max-w-600">
+          <h1 className="text-black mb-2">Hubungi Kami</h1>
+          <p className="text-gray-600 mx-auto max-w-600">
             Bila Anda memiliki pertanyaan ritel, membutuhkan pesanan grosir untuk bisnis Anda, atau ingin bermitra dengan kami, kami siap membantu.
           </p>
         </div>

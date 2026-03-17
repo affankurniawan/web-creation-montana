@@ -8,9 +8,9 @@ export default function About({ setPage }) {
   return (
     <main className="about-page">
       {/* Hero */}
-      <section className="about-hero section bg-gray text-center">
+      <section className="about-hero section bg-gray-50 text-center text-black">
         <div className="container">
-          <h1 className="mb-2">Kami percaya alat yang baik tidak boleh sulit dijangkau.</h1>
+          <h1 className="mb-2 text-black">Kami percaya alat yang baik tidak boleh sulit dijangkau.</h1>
           <p className="subtitle mx-auto text-black-80">
             Montana adalah merek bernilai cerdas yang dirancang untuk membuat produk sehari-hari berkualitas tinggi lebih mudah diakses oleh generasi ini.
           </p>
