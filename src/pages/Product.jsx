@@ -27,6 +27,11 @@ export default function Product({ setPage, addToCart }) {
         </span>
       </div>
 
+      {/* Promo Banner */}
+      <div className="container mt-4 mb-2 cursor-pointer transition-transform hover:scale-[1.01]" onClick={() => setActiveCategory('Produk Baru')}>
+        <img src="/produk-terbaru.png" alt="Promo Produk Terbaru Montana" className="w-full rounded-lg shadow-md" style={{ maxHeight: '300px', objectFit: 'cover' }} />
+      </div>
+
       <div className="container product-layout">
         
         {/* Sidebar Filters */}
