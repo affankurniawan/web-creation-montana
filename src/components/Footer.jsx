@@ -5,7 +5,7 @@ export default function Footer({ setPage }) {
     <footer className="footer bg-black">
       <div className="container footer-container">
         <div className="footer-brand">
-          <h2 className="text-white">MONTANA</h2>
+          <img src="/logo.png" alt="Montana Logo" style={{ height: '48px', marginBottom: '1rem' }} />
           <p className="text-gray" style={{ color: '#ADB5BD', maxWidth: '300px' }}>
             Alat yang lebih baik untuk generasi yang lebih cerdas. Kebutuhan yang tahan lama dan praktis dengan harga cerdas.
           </p>
@@ -15,6 +15,7 @@ export default function Footer({ setPage }) {
           <div className="footer-column">
             <h3>Belanja</h3>
             <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>Semua Produk</a>
+            <a href="#">Produk Unggulan</a>
             <a href="#">Terlaris</a>
             <a href="#">Kebutuhan Sekolah</a>
             <a href="#">Perlengkapan Kantor</a>
@@ -23,7 +24,7 @@ export default function Footer({ setPage }) {
           <div className="footer-column">
             <h3>Brand</h3>
             <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); }}>Tentang Kami</a>
-            <a href="#">Misi Kami</a>
+            <a href="#">Visi Misi Kami</a>
             <a href="#">Blog</a>
           </div>
           
