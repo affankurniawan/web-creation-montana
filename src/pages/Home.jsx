@@ -19,7 +19,7 @@ export default function Home({ setPage }) {
         <div className="hero-bg" style={{ backgroundImage: `url(${images.hero})` }}></div>
         <div className="container hero-content">
           <div className="hero-text-box">
-            <div className="hero-actions" style={{ marginTop: '430px', marginLeft: '110px' }}>
+            <div className="hero-actions custom-cta-positioning">
               <button className="btn btn-primary" onClick={() => setPage('product')}>
                 Belanja Kebutuhan <ArrowRight size={18} style={{ marginLeft: '8px' }} />
               </button>
@@ -32,7 +32,7 @@ export default function Home({ setPage }) {
       <section className="value-strip bg-black section py-md">
         <div className="container flex value-grid">
           <div className="value-item"><ShieldCheck className="value-icon" /> <span>Kualitas Tahan Lama</span></div>
-          <div className="value-item"><Star className="value-icon" /> <span>Nilai Terjangkau</span></div>
+          <div className="value-item"><Star className="value-icon" /> <span>Harga Terjangkau</span></div>
           <div className="value-item"><CheckCircle2 className="value-icon" /> <span>Desain Praktis</span></div>
           <div className="value-item"><Bookmark className="value-icon" /> <span>Siap Setiap Hari</span></div>
         </div>
@@ -71,10 +71,10 @@ export default function Home({ setPage }) {
           
           <div className="grid grid-cols-4 gap-3 product-grid">
             {[
-              { id: 1, name: 'Montana Pro Pen Set', img: images.prod1, price: 'Rp 45.000' },
-              { id: 2, name: 'Durable A4 Notebook', img: images.prod2, price: 'Rp 32.000' },
-              { id: 3, name: 'Precision Desk Organizer', img: images.prod3, price: 'Rp 85.000' },
-              { id: 4, name: 'Everyday Highlighters', img: images.prod4, price: 'Rp 28.000' }
+              { id: 1, name: 'MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P', img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png', price: 'Rp 0' },
+              { id: 2, name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail', img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png', price: 'Rp 0' },
+              { id: 3, name: 'MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail', img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp', price: 'Rp 0' },
+              { id: 4, name: 'MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail', img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp', price: 'Rp 0' }
             ].map(product => (
               <div className="product-card" key={product.id}>
                 <div className="product-img-wrapper">

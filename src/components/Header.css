@@ -81,6 +81,22 @@
   .desktop-nav {
     display: none;
   }
+  .desktop-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-black);
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid #333333;
+    align-items: flex-start;
+  }
+  .desktop-nav.open a {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-xl);
+  }
   .mobile-menu-btn {
     display: block;
   }

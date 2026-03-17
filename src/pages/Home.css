@@ -19,6 +19,20 @@
   z-index: 1;
 }
 
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: auto;
+    /* Tightly wrap the height around the constrained image to eliminate any gap */
+    height: 50vw;
+  }
+  .hero-bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+}
+
+
 
 
 .hero-content {
@@ -229,4 +243,32 @@
 @media (max-width: 768px) {
   .hero-text-box h1 { font-size: 3rem; }
   .value-grid { grid-template-columns: 1fr 1fr; display: grid; gap: var(--spacing-md); }
+}
+
+/* Custom CTA Positioning for Hero */
+.custom-cta-positioning {
+  margin-top: 430px;
+  margin-left: 110px;
+}
+
+@media (max-width: 1024px) {
+  .custom-cta-positioning {
+    margin-top: 28vw;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-cta-positioning {
+    margin-top: 32vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-cta-positioning {
+    margin-top: 38vw;
+  }
 }

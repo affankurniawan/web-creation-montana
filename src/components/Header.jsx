@@ -1,14 +1,17 @@
-import { ShoppingCart, Menu, Search } from 'lucide-react';
+import { useState } from 'react';
+import { ShoppingCart, Menu, Search, X } from 'lucide-react';
 import './Header.css';
 
 export default function Header({ setPage }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container header-container">
         
         {/* Mobile Menu Icon */}
-        <button className="mobile-menu-btn">
-          <Menu size={24} />
+        <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Logo */}
@@ -17,12 +20,12 @@ export default function Header({ setPage }) {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav">
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('home'); }}>Beranda</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); }}>Tentang Kami</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>Produk</a>
-          <a href="#">Blog</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); }}>Hubungi Kami</a>
+        <nav className={`desktop-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('home'); setIsMobileMenuOpen(false); }}>Beranda</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); setIsMobileMenuOpen(false); }}>Tentang Kami</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); setIsMobileMenuOpen(false); }}>Produk</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}>Blog</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); setIsMobileMenuOpen(false); }}>Hubungi Kami</a>
         </nav>
 
         {/* Icons */}
