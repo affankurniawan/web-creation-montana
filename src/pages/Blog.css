@@ -71,6 +71,12 @@
 
 .blog-title a {
   text-decoration: none;
+  color: var(--color-black);
+  transition: color 0.2s;
+}
+
+.blog-title a:hover {
+  color: var(--color-yellow);
 }
 
 .blog-excerpt {
@@ -85,11 +91,12 @@
   border-bottom: 2px solid var(--color-yellow);
   padding-bottom: 2px;
   align-self: flex-start;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 }
 
 .btn-link:hover {
-  opacity: 0.7;
+  color: var(--color-yellow);
+  border-bottom-color: var(--color-black);
 }
 
 /* Responsive */
