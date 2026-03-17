@@ -69,10 +69,10 @@ export default function About({ setPage }) {
       </section>
 
       {/* CTA */}
-      <section className="section text-center text-white pb-mb-0 bg-black" style={{ padding: 'var(--spacing-3xl) 0' }}>
+      <section className="section text-center text-black pb-mb-0 bg-yellow" style={{ padding: 'var(--spacing-3xl) 0' }}>
         <div className="container">
-          <h2 className="mb-3 text-white">Mulai Membuat Pilihan Lebih Cerdas</h2>
-          <button className="btn btn-primary" onClick={() => setPage('product')}>Belanja Kebutuhan</button>
+          <h2 className="mb-3 text-black">Mulai Membuat Pilihan Lebih Cerdas</h2>
+          <button className="btn btn-primary bg-black text-white hover:bg-gray-800" style={{ border: '2px solid black' }} onClick={() => setPage('product')}>Belanja Kebutuhan</button>
         </div>
       </section>
     </main>
