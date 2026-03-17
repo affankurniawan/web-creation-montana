@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Header setPage={setPage} />
+      <Header page={page} setPage={setPage} />
       
       {page === 'home' && <Home setPage={setPage} />}
       {page === 'about' && <About setPage={setPage} />}

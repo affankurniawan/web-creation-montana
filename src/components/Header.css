@@ -35,10 +35,21 @@
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--color-white);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
 }
 
 .desktop-nav a:hover {
-  color: var(--color-blue);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.desktop-nav a.active {
+  background-color: var(--color-yellow);
+  color: var(--color-black) !important;
+  font-weight: 600;
 }
 
 .header-actions {
@@ -109,7 +120,7 @@
   left: 0;
   width: 100%;
   background-color: var(--color-white);
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-sm) 0;
   border-bottom: 1px solid var(--color-gray-100);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   z-index: 40;
@@ -121,7 +132,9 @@
   background-color: var(--color-gray);
   border-radius: var(--radius-md);
   padding: 0 var(--spacing-md);
-  height: 50px;
+  height: 44px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .search-overlay-icon {
@@ -140,12 +153,15 @@
 }
 
 .search-results {
-  margin-top: var(--spacing-md);
-  max-height: 300px;
+  margin-top: var(--spacing-sm);
+  max-height: 250px;
   overflow-y: auto;
   border: 1px solid var(--color-gray-100);
   border-radius: var(--radius-md);
   background: var(--color-white);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-results ul {

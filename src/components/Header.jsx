@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ShoppingCart, Menu, Search, X } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ setPage }) {
+export default function Header({ page, setPage }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -47,11 +47,11 @@ export default function Header({ setPage }) {
 
         {/* Desktop Navigation */}
         <nav className={`desktop-nav ${isMobileMenuOpen ? 'open' : ''}`}>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('home'); setIsMobileMenuOpen(false); }}>Beranda</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('about'); setIsMobileMenuOpen(false); }}>Tentang Kami</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); setIsMobileMenuOpen(false); }}>Produk</a>
+          <a href="#" className={page === 'home' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('home'); setIsMobileMenuOpen(false); }}>Beranda</a>
+          <a href="#" className={page === 'about' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('about'); setIsMobileMenuOpen(false); }}>Tentang Kami</a>
+          <a href="#" className={page === 'product' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('product'); setIsMobileMenuOpen(false); }}>Produk</a>
           <a href="#" onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}>Blog</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setPage('contact'); setIsMobileMenuOpen(false); }}>Hubungi Kami</a>
+          <a href="#" className={page === 'contact' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('contact'); setIsMobileMenuOpen(false); }}>Hubungi Kami</a>
         </nav>
 
         {/* Icons */}
