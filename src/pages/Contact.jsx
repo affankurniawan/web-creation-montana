@@ -31,7 +31,7 @@ export default function Contact() {
               <Mail className="info-icon text-yellow" size={24} />
               <div>
                 <h4>Email Kami</h4>
-                <p>hello@montana-smart.com</p>
+                <p>admin@montanastationery.com</p>
               </div>
             </div>
 
