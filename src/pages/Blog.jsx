@@ -9,7 +9,7 @@ export default function Blog() {
       date: '17 Mar 2026',
       author: 'Tim Montana',
       category: 'Tips & Trik',
-      img: 'https://images.unsplash.com/photo-1507925922837-326f12d93d50?w=600&q=80',
+      img: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=600&q=80',
     },
     {
       id: 2,
