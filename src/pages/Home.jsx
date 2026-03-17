@@ -120,10 +120,33 @@ export default function Home({ setPage }) {
         </div>
       </section>
 
+      {/* 6.5 Client Logo Ticker */}
+      <section className="section bg-white border-y border-gray-100 overflow-hidden py-md">
+        <div className="container">
+          <h3 className="text-center mb-3 text-gray-500" style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Telah Dipercaya Oleh</h3>
+        </div>
+        <div className="logo-ticker">
+          <div className="logo-track">
+            {/* First Set */}
+            {[...Array(6)].map((_, i) => (
+              <div key={`logo-1-${i}`} className="client-logo-placeholder">
+                <span className="font-bold text-gray-400 text-xl">Perusahaan {i + 1}</span>
+              </div>
+            ))}
+            {/* Duplicated Set for infinite loop */}
+            {[...Array(6)].map((_, i) => (
+              <div key={`logo-2-${i}`} className="client-logo-placeholder">
+                <span className="font-bold text-gray-400 text-xl">Perusahaan {i + 1}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 7. Testimonials */}
       <section className="section bg-gray">
         <div className="container">
-          <h2 className="mb-4 text-center">Dipercaya Pengguna</h2>
+          <h2 className="mb-4 text-center">Kata Mereka</h2>
           <div className="grid grid-cols-3 gap-3">
             {[
               { quote: "Akhirnya ada pena yang tintanya tidak tembus dan tahan satu semester. Sangat sepadan.", author: "Ayu T., Mahasiswa" },

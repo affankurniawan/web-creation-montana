@@ -251,6 +251,73 @@
   color: var(--color-black);
 }
 
+/* Client Logo Ticker */
+.py-md { padding: 3rem 0; }
+.border-y { border-top: 1px solid var(--color-gray-100); border-bottom: 1px solid var(--color-gray-100); }
+.text-gray-500 { color: var(--color-gray-500); }
+.text-gray-400 { color: #cbd5e1; }
+.font-bold { font-weight: 700; }
+.text-xl { font-size: 1.25rem; }
+
+.logo-ticker {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 1rem 0;
+}
+
+.logo-ticker::before,
+.logo-ticker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-ticker::before {
+  left: 0;
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-ticker::after {
+  right: 0;
+  background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  gap: 4rem;
+  padding-right: 4rem; /* Match gap */
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scrolls exactly one set of logos */
+}
+
+.client-logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 60px;
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.client-logo-placeholder:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
 /* Misc */
 .mx-auto { margin-left: auto; margin-right: auto; }
 .text-blue { color: var(--color-blue); }
