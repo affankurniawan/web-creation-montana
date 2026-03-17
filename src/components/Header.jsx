@@ -50,7 +50,7 @@ export default function Header({ page, setPage }) {
           <a href="#" className={page === 'home' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('home'); setIsMobileMenuOpen(false); }}>Beranda</a>
           <a href="#" className={page === 'about' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('about'); setIsMobileMenuOpen(false); }}>Tentang Kami</a>
           <a href="#" className={page === 'product' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('product'); setIsMobileMenuOpen(false); }}>Produk</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); }}>Blog</a>
+          <a href="#" className={page === 'blog' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('blog'); setIsMobileMenuOpen(false); }}>Blog</a>
           <a href="#" className={page === 'contact' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('contact'); setIsMobileMenuOpen(false); }}>Hubungi Kami</a>
         </nav>
 
