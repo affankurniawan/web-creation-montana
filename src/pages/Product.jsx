@@ -5,6 +5,7 @@ import './Product.css';
 export default function Product({ setPage, addToCart }) {
   const [activeCategory, setActiveCategory] = useState('Semua');
   const [activeNeed, setActiveNeed] = useState('Semua');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const categories = ['Semua', 'Produk Baru', 'Paket Bundel', 'Kalkulator', 'Spidol', 'Pulpen', 'Gunting', 'Lem'];
   const needs = ['Semua', 'Sekolah', 'Kantor', 'Rumah', 'Bisnis'];
@@ -32,7 +33,12 @@ export default function Product({ setPage, addToCart }) {
         <aside className="product-sidebar">
           <div className="search-box mb-4">
             <Search size={18} className="search-icon" />
-            <input type="text" placeholder="Cari kebutuhan..." />
+            <input 
+              type="text" 
+              placeholder="Cari kebutuhan..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
 
           <div className="filter-group mb-4">
@@ -81,6 +87,8 @@ export default function Product({ setPage, addToCart }) {
             {products
               .filter(p => activeCategory === 'Semua' || p.category === activeCategory)
               .filter(p => activeNeed === 'Semua' || p.needs.includes(activeNeed))
+              .filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                           p.category.toLowerCase().includes(searchQuery.toLowerCase()))
               .map(product => (
               <div className="catalog-product-card" key={product.id}>
                 {product.tag && <div className={`badge badge-${product.tag.toLowerCase().replace(' ', '-')}`}>{product.tag}</div>}

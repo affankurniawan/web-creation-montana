@@ -20,15 +20,29 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
     { title: 'Pesanan Grosir & Kemitraan', type: 'Informasi', id: 'contact' }
   ];
 
-  const searchResults = searchQuery.trim() === '' ? [] : siteData.filter(item => 
-    item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-    item.type.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const defaultRecommendations = [
+    { title: 'Kalkulator MONTANA 8 Digit', type: 'Produk Populer', id: 'product' },
+    { title: 'Katalog Produk', type: 'Jelajahi', id: 'product' },
+    { title: 'Promo & Paket Bundel', type: 'Spesial', id: 'product' }
+  ];
+
+  const searchResults = searchQuery.trim() === '' 
+    ? defaultRecommendations 
+    : siteData.filter(item => 
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        item.type.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
   const handleSearchSelect = (pageId) => {
     setPage(pageId);
     setIsSearchOpen(false);
     setSearchQuery('');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && searchResults.length > 0) {
+      handleSearchSelect(searchResults[0].id);
+    }
   };
 
   return (
@@ -75,15 +89,15 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
               <Search size={20} className="search-overlay-icon" />
               <input 
                 type="text" 
-                placeholder="Cari produk, informasi, atau halaman..." 
+                placeholder="Cari kebutuhan..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
                 autoFocus
               />
             </div>
             
-            {searchQuery && (
-              <div className="search-results">
+            <div className="search-results">
                 {searchResults.length > 0 ? (
                   <ul>
                     {searchResults.map((result, idx) => (
@@ -97,7 +111,6 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
                   <div className="no-results">Tidak ada hasil yang cocok untuk "{searchQuery}"</div>
                 )}
               </div>
-            )}
           </div>
         </div>
       )}
