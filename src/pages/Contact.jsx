@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="container">
           <h1 className="text-white mb-2">Hubungi Kami</h1>
           <p className="text-gray-300 mx-auto max-w-600">
-            Baik Anda memiliki pertanyaan ritel, membutuhkan pesanan grosir untuk bisnis Anda, atau ingin bermitra dengan kami, kami siap membantu.
+            Bila Anda memiliki pertanyaan ritel, membutuhkan pesanan grosir untuk bisnis Anda, atau ingin bermitra dengan kami, kami siap membantu.
           </p>
         </div>
       </section>
