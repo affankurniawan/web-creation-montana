@@ -335,7 +335,7 @@
 
 @media (max-width: 1024px) {
   .custom-cta-positioning {
-    margin-top: 28vw;
+    margin-top: 36vw;
     margin-left: 0;
     display: flex;
     justify-content: center;
@@ -345,13 +345,13 @@
 
 @media (max-width: 768px) {
   .custom-cta-positioning {
-    margin-top: 32vw;
+    margin-top: 38vw;
   }
 }
 
 @media (max-width: 480px) {
   .custom-cta-positioning {
-    margin-top: 38vw;
+    margin-top: 40vw;
   }
 }
 
