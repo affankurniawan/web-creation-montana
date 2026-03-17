@@ -4,6 +4,32 @@ import './Header.css';
 
 export default function Header({ setPage }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const siteData = [
+    { title: 'Beranda', type: 'Halaman', id: 'home' },
+    { title: 'Tentang Kami', type: 'Halaman', id: 'about' },
+    { title: 'Katalog Produk', type: 'Halaman', id: 'product' },
+    { title: 'Hubungi Kami', type: 'Halaman', id: 'contact' },
+    { title: 'Kalkulator MONTANA 8 Digit', type: 'Produk Unggulan', id: 'product' },
+    { title: 'Spidol Permanen MONTANA', type: 'Produk Unggulan', id: 'product' },
+    { title: 'Lem Batang Solid Glue MONTANA', type: 'Produk Unggulan', id: 'product' },
+    { title: 'Gunting Stainless MONTANA', type: 'Produk Unggulan', id: 'product' },
+    { title: 'Visi Misi dan Nilai Cerdas', type: 'Informasi', id: 'about' },
+    { title: 'Pesanan Grosir & Kemitraan', type: 'Informasi', id: 'contact' }
+  ];
+
+  const searchResults = searchQuery.trim() === '' ? [] : siteData.filter(item => 
+    item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    item.type.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleSearchSelect = (pageId) => {
+    setPage(pageId);
+    setIsSearchOpen(false);
+    setSearchQuery('');
+  };
 
   return (
     <header className="header">
@@ -30,7 +56,9 @@ export default function Header({ setPage }) {
 
         {/* Icons */}
         <div className="header-actions">
-          <button className="icon-btn"><Search size={20} /></button>
+          <button className="icon-btn" onClick={() => setIsSearchOpen(!isSearchOpen)}>
+            {isSearchOpen ? <X size={20} /> : <Search size={20} />}
+          </button>
           <button className="icon-btn cart-btn">
             <ShoppingCart size={20} />
             <span className="cart-badge">0</span>
@@ -38,6 +66,41 @@ export default function Header({ setPage }) {
         </div>
 
       </div>
+
+      {/* Global Search Overlay */}
+      {isSearchOpen && (
+        <div className="search-overlay">
+          <div className="container">
+            <div className="search-input-wrapper">
+              <Search size={20} className="search-overlay-icon" />
+              <input 
+                type="text" 
+                placeholder="Cari produk, informasi, atau halaman..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                autoFocus
+              />
+            </div>
+            
+            {searchQuery && (
+              <div className="search-results">
+                {searchResults.length > 0 ? (
+                  <ul>
+                    {searchResults.map((result, idx) => (
+                      <li key={idx} onClick={() => handleSearchSelect(result.id)}>
+                        <div className="result-title">{result.title}</div>
+                        <div className="result-type">{result.type}</div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="no-results">Tidak ada hasil yang cocok untuk "{searchQuery}"</div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
