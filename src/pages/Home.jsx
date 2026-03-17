@@ -115,7 +115,7 @@ export default function Home({ setPage }) {
           <h2 className="mb-2">Alat yang lebih baik untuk generasi yang lebih cerdas.</h2>
           <p className="purpose-text mb-3 text-black-80">
             Setiap pena, spidol, dan kebutuhan sehari-hari dapat mendukung kebiasaan yang lebih baik. 
-            Dengan membuat alat cerdas lebih mudah diakses, kami membangun fondasi untuk dampak pendidikan yang lebih luas.
+            Dengan membuat alat cerdas secara lebih mudah diakses, kami membangun fondasi untuk kemajuan di dunia pendidikan maupun perkantoran.
           </p>
           <button className="btn btn-secondary" onClick={() => setPage('about')}>Misi Kami</button>
         </div>
