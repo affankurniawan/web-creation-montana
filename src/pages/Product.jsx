@@ -10,10 +10,10 @@ export default function Product() {
   const needs = ['Semua', 'Sekolah', 'Kantor', 'Rumah', 'Bisnis'];
 
   const products = [
-    { id: 1, name: 'MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P', img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png', price: 'Rp 0', tag: 'Terlaris', category: 'Kalkulator' },
-    { id: 2, name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail', img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png', price: 'Rp 0', tag: 'Promo', category: 'Spidol' },
-    { id: 3, name: 'MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail', img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp', price: 'Rp 0', tag: 'Terbaru', category: 'Lem' },
-    { id: 4, name: 'MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail', img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp', price: 'Rp 0', tag: 'Promo', category: 'Gunting' },
+    { id: 1, name: 'MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P', img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png', price: 'Rp 0', tag: 'Terlaris', category: 'Kalkulator', needs: ['Kantor', 'Bisnis', 'Sekolah', 'Rumah'] },
+    { id: 2, name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail', img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png', price: 'Rp 0', tag: 'Promo', category: 'Spidol', needs: ['Kantor', 'Sekolah', 'Bisnis', 'Rumah'] },
+    { id: 3, name: 'MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail', img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp', price: 'Rp 0', tag: 'Terbaru', category: 'Lem', needs: ['Sekolah', 'Kantor', 'Rumah'] },
+    { id: 4, name: 'MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail', img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp', price: 'Rp 0', tag: 'Promo', category: 'Gunting', needs: ['Kantor', 'Sekolah', 'Rumah', 'Bisnis'] },
   ];
 
   return (
@@ -80,6 +80,7 @@ export default function Product() {
           <div className="grid grid-cols-3 product-grid-catalog gap-3">
             {products
               .filter(p => activeCategory === 'Semua' || p.category === activeCategory)
+              .filter(p => activeNeed === 'Semua' || p.needs.includes(activeNeed))
               .map(product => (
               <div className="catalog-product-card" key={product.id}>
                 {product.tag && <div className={`badge badge-${product.tag.toLowerCase().replace(' ', '-')}`}>{product.tag}</div>}
