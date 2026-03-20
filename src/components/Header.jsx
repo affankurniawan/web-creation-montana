@@ -15,22 +15,41 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
   }, []);
 
   const siteData = [
+    // Halaman
     { title: 'Beranda', type: 'Halaman', id: 'home' },
     { title: 'Tentang Kami', type: 'Halaman', id: 'about' },
     { title: 'Katalog Produk', type: 'Halaman', id: 'product' },
+    { title: 'Blog', type: 'Halaman', id: 'blog' },
     { title: 'Hubungi Kami', type: 'Halaman', id: 'contact' },
-    { title: 'Kalkulator MONTANA 8 Digit', type: 'Produk Unggulan', id: 'product' },
-    { title: 'Spidol Permanen MONTANA', type: 'Produk Unggulan', id: 'product' },
-    { title: 'Lem Batang Solid Glue MONTANA', type: 'Produk Unggulan', id: 'product' },
-    { title: 'Gunting Stainless MONTANA', type: 'Produk Unggulan', id: 'product' },
-    { title: 'Visi Misi dan Nilai Cerdas', type: 'Informasi', id: 'about' },
-    { title: 'Pesanan Grosir & Kemitraan', type: 'Informasi', id: 'contact' }
+    // Produk
+    { title: 'Kalkulator MONTANA 8 Digit MTC-200 P', type: 'Produk', id: 'product' },
+    { title: 'Spidol Permanen MONTANA MP-12', type: 'Produk', id: 'product' },
+    { title: 'Lem Batang MONTANA Glue Stick GS-25', type: 'Produk', id: 'product' },
+    { title: 'Gunting Stainless MONTANA STI-165', type: 'Produk', id: 'product' },
+    // Kategori
+    { title: 'Perlengkapan Sekolah', type: 'Kategori', id: 'product' },
+    { title: 'Perlengkapan Kantor', type: 'Kategori', id: 'product' },
+    { title: 'Kalkulator', type: 'Kategori', id: 'product' },
+    { title: 'Spidol', type: 'Kategori', id: 'product' },
+    { title: 'Gunting', type: 'Kategori', id: 'product' },
+    { title: 'Lem', type: 'Kategori', id: 'product' },
+    // Marketplace
+    { title: 'Beli di Shopee Official Store', type: 'Marketplace', id: 'product' },
+    { title: 'Beli di Tokopedia Official Store', type: 'Marketplace', id: 'product' },
+    { title: 'Beli di TikTok Shop', type: 'Marketplace', id: 'product' },
+    { title: 'Beli di Lazada Official Store', type: 'Marketplace', id: 'product' },
+    // Info
+    { title: 'Pesanan Grosir via WhatsApp', type: 'Layanan', id: 'contact' },
+    { title: 'Pengiriman dari Jakarta', type: 'Informasi', id: 'product' },
+    { title: 'Gratis Ongkir Grosir', type: 'Promo', id: 'product' },
+    { title: 'Tentang Brand Montana', type: 'Informasi', id: 'about' },
   ];
 
   const defaultRecommendations = [
-    { title: 'Kalkulator MONTANA 8 Digit', type: 'Produk Populer', id: 'product' },
     { title: 'Katalog Produk', type: 'Jelajahi', id: 'product' },
-    { title: 'Promo & Paket Bundel', type: 'Spesial', id: 'product' }
+    { title: 'Pesanan Grosir via WhatsApp', type: 'Layanan', id: 'contact' },
+    { title: 'Kalkulator MONTANA 8 Digit', type: 'Produk Terlaris', id: 'product' },
+    { title: 'Tentang Montana', type: 'Halaman', id: 'about' },
   ];
 
   const searchResults = searchQuery.trim() === '' 

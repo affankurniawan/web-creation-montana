@@ -285,6 +285,11 @@
   text-decoration: line-through;
 }
 
+/* CTA Grosir */
+.cta-grosir {
+  background: #1a1a1a;
+}
+
 /* Why Montana */
 .why-list {
   list-style: none;

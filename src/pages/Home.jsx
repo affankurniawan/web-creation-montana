@@ -298,7 +298,7 @@ export default function Home({ setPage, addToCart, openProductDetail }) {
       </section>
 
       {/* 9. CTA Section */}
-      <section className="section text-center cta-section bg-black">
+      <section className="section text-center cta-section cta-grosir">
         <div className="container">
           <Briefcase size={36} className="mb-3 mx-auto" strokeWidth={1.5} color="#ffd800" />
           <h2 className="text-white mb-2">Pesanan Grosir & Kemitraan Ritel</h2>
