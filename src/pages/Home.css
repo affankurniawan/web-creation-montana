@@ -477,4 +477,74 @@
 @media (max-width: 480px) {
   .custom-cta-positioning { margin-top: 40vw; }
   .trust-markers-grid { grid-template-columns: 1fr; }
+  .mp-strip-content { flex-direction: column; text-align: center; }
+  .mp-strip-buttons { justify-content: center; }
+}
+
+/* Marketplace Strip */
+.marketplace-strip {
+  background: var(--color-black);
+  padding: 2.5rem 0;
+}
+
+.mp-strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.mp-strip-text h3 {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.mp-strip-text p {
+  color: var(--color-gray-400);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.mp-strip-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.mp-strip-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.mp-strip-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  color: white;
+}
+
+.mp-strip-shopee { background: #F53D2D; }
+.mp-strip-tokopedia { background: #42B549; }
+.mp-strip-tiktok { background: #232323; border: 1px solid #444; }
+.mp-strip-lazada { background: #0F146D; }
+
+@media (max-width: 768px) {
+  .mp-strip-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mp-strip-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
