@@ -77,10 +77,18 @@ export default function CartDrawer({ isOpen, onClose, cartItems, removeFromCart,
         {cartItems.length > 0 && (
           <div className="cart-footer">
             <div className="cart-summary">
-              <span className="summary-label">Total</span>
+              <span className="summary-label">Estimasi Total <small>(belum termasuk ongkir)</small></span>
               <span className="summary-value">Rp {totalAmount.toLocaleString('id-ID')}</span>
             </div>
-            <p className="cart-note">Harga & ongkir dikonfirmasi saat checkout via WhatsApp</p>
+            <p className="cart-shipping-origin">📦 Pengiriman dari <strong>Jakarta</strong></p>
+            <div className="cart-couriers">
+              <span className="courier-tag">JNE</span>
+              <span className="courier-tag">J&T</span>
+              <span className="courier-tag">SiCepat</span>
+              <span className="courier-tag">AnterAja</span>
+              <span className="courier-tag">Ninja</span>
+            </div>
+            <p className="cart-note">Harga final & ongkir dikonfirmasi via WhatsApp</p>
             
             <button className="checkout-btn checkout-btn-wa" onClick={handleInquiryWA}>
               <MessageCircle size={16} />

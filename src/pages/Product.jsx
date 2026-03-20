@@ -16,6 +16,7 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Kalkulator 8 Digit Big Display 2 Power MTC-200 P',
       img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Terlaris',
       category: 'Kalkulator',
       needs: ['Kantor', 'Bisnis', 'Sekolah', 'Rumah'],
@@ -27,6 +28,7 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12',
       img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Promo',
       category: 'Spidol',
       needs: ['Kantor', 'Sekolah', 'Bisnis', 'Rumah'],
@@ -38,6 +40,7 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Glue Stick Lem Batang 25g Perekat Serbaguna GS-25',
       img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Terbaru',
       category: 'Lem',
       needs: ['Sekolah', 'Kantor', 'Rumah'],
@@ -49,6 +52,7 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Gunting Stainless Steel Multipurpose STI-165',
       img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Promo',
       category: 'Gunting',
       needs: ['Kantor', 'Sekolah', 'Rumah', 'Bisnis'],
@@ -157,6 +161,7 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
                   <h4>{product.name}</h4>
                   <div className="catalog-price-row">
                     <span className="catalog-price">{product.price}</span>
+                    {product.originalPrice && <span className="catalog-price-original">{product.originalPrice}</span>}
                   </div>
                   <button className="btn btn-outline btn-sm catalog-btn" onClick={(e) => { e.stopPropagation(); addToCart(product); }}>
                     Tambah +

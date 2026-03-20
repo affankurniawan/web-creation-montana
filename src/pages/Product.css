@@ -224,15 +224,25 @@
   overflow: hidden;
 }
 
-.catalog-price-row {
-  margin-bottom: var(--spacing-md);
-  margin-top: auto;
+.catalog-price {
+  font-weight: 800;
+  color: #E53E3E;
+  font-size: 1rem;
 }
 
-.catalog-price {
-  font-weight: 700;
-  color: var(--color-black);
-  font-size: 1rem;
+.catalog-price-original {
+  font-size: 0.8125rem;
+  color: var(--color-gray-400);
+  text-decoration: line-through;
+  margin-left: 0.25rem;
+}
+
+.catalog-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: var(--spacing-md);
+  margin-top: auto;
 }
 
 .catalog-btn {

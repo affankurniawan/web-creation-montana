@@ -14,6 +14,7 @@ export default function Home({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Kalkulator 8 Digit Big Display 2 Power MTC-200 P',
       img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Terlaris',
       category: 'Kalkulator',
       variants: ['Standard'],
@@ -24,6 +25,7 @@ export default function Home({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12',
       img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Promo',
       category: 'Spidol',
       variants: ['Standard'],
@@ -34,6 +36,7 @@ export default function Home({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Glue Stick Lem Batang 25g Perekat Serbaguna GS-25',
       img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       tag: 'Terbaru',
       category: 'Lem',
       variants: ['Standard'],
@@ -44,6 +47,7 @@ export default function Home({ setPage, addToCart, openProductDetail }) {
       name: 'MONTANA Gunting Stainless Steel Multipurpose STI-165',
       img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp',
       price: 'Rp 0',
+      originalPrice: 'Rp 0',
       category: 'Gunting',
       variants: ['Standard'],
       description: 'Gunting multipurpose berbahan stainless steel premium yang kuat, tajam, dan anti karat. Handle ergonomis dengan lapisan karet lembut untuk kenyamanan saat memotong kertas, kain, tali, hingga plastik.\n\n✅ Stainless steel anti karat\n✅ Tajam dan presisi tinggi\n✅ Handle ergonomis, nyaman di tangan\n✅ Multipurpose: kertas, kain, plastik, tali\n✅ Awet, ketajaman tahan lama'
@@ -180,6 +184,7 @@ export default function Home({ setPage, addToCart, openProductDetail }) {
                   <h4>{product.name}</h4>
                   <div className="product-price-row">
                     <span className="price">{product.price}</span>
+                    {product.originalPrice && <span className="price-original">{product.originalPrice}</span>}
                   </div>
                 </div>
               </div>
