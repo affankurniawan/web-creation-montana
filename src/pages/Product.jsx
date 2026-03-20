@@ -11,10 +11,50 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
   const needs = ['Semua', 'Sekolah', 'Kantor', 'Rumah', 'Bisnis'];
 
   const products = [
-    { id: 1, name: 'MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P', img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png', price: 'Rp 0', tag: 'Terlaris', category: 'Kalkulator', needs: ['Kantor', 'Bisnis', 'Sekolah', 'Rumah'], variants: ['Standard'], description: 'Kalkulator 8 digit dengan layar besar dan dual power (solar + baterai).' },
-    { id: 2, name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail', img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png', price: 'Rp 0', tag: 'Promo', category: 'Spidol', needs: ['Kantor', 'Sekolah', 'Bisnis', 'Rumah'], variants: ['Hitam', 'Merah', 'Biru'], description: 'Spidol permanen round tip dengan tinta tahan lama.' },
-    { id: 3, name: 'MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail', img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp', price: 'Rp 0', tag: 'Terbaru', category: 'Lem', needs: ['Sekolah', 'Kantor', 'Rumah'], variants: ['25g', '35g'], description: 'Lem batang dengan daya rekat kuat dan tidak meninggalkan residu.' },
-    { id: 4, name: 'MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail', img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp', price: 'Rp 0', tag: 'Promo', category: 'Gunting', needs: ['Kantor', 'Sekolah', 'Rumah', 'Bisnis'], variants: ['Standard'], description: 'Gunting stainless steel multipurpose yang kuat, tajam, dan anti karat.' },
+    {
+      id: 1,
+      name: 'MONTANA Kalkulator 8 Digit Big Display 2 Power MTC-200 P',
+      img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png',
+      price: 'Rp 0',
+      tag: 'Terlaris',
+      category: 'Kalkulator',
+      needs: ['Kantor', 'Bisnis', 'Sekolah', 'Rumah'],
+      variants: ['Standard'],
+      description: 'Kalkulator desktop 8 digit dengan layar besar yang mudah dibaca. Dilengkapi sistem dual power (solar + baterai) sehingga tetap bisa digunakan di kondisi pencahayaan apa pun. Tombol responsif dengan feedback tekan nyaman untuk penghitungan cepat dan akurat. Bonus cover pelindung agar tetap awet di dalam tas atau meja kerja.\n\n✅ Layar besar, angka jelas\n✅ Dual power: solar & baterai\n✅ Tombol responsif & nyaman\n✅ Bonus cover pelindung\n✅ Cocok untuk kantor, sekolah, dan bisnis'
+    },
+    {
+      id: 2,
+      name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12',
+      img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png',
+      price: 'Rp 0',
+      tag: 'Promo',
+      category: 'Spidol',
+      needs: ['Kantor', 'Sekolah', 'Bisnis', 'Rumah'],
+      variants: ['Standard'],
+      description: 'Spidol permanen dengan ujung round tip yang menghasilkan garis tebal dan jelas di berbagai permukaan: kertas, plastik, kayu, kain, hingga logam. Tinta non-toxic, cepat kering, dan tahan air — tidak luntur walau terkena hujan atau basah. Tersedia dalam 3 warna: Hitam, Merah, dan Biru. Dijual satuan (retail) maupun per box (12 pcs).\n\n✅ Tinta permanen, tahan air & anti luntur\n✅ Non-toxic, aman digunakan\n✅ Bisa di kertas, plastik, kayu, kain, logam\n✅ Cepat kering, tidak mudah pudar\n✅ Tersedia 3 warna pilihan'
+    },
+    {
+      id: 3,
+      name: 'MONTANA Glue Stick Lem Batang 25g Perekat Serbaguna GS-25',
+      img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp',
+      price: 'Rp 0',
+      tag: 'Terbaru',
+      category: 'Lem',
+      needs: ['Sekolah', 'Kantor', 'Rumah'],
+      variants: ['Standard'],
+      description: 'Lem batang (glue stick) dengan formula excellent adhesive yang memberikan daya rekat kuat namun tetap bersih — tidak meninggalkan residu atau bekas lengket di tangan. Ideal untuk menempel kertas, karton, foto, dan kerajinan tangan. Tekstur lembut dan mudah dioleskan, cocok untuk anak-anak maupun pekerjaan kantor. Tersedia ukuran 25g dan 35g.\n\n✅ Daya rekat kuat, hasil rapi\n✅ Tanpa residu, bersih di tangan\n✅ Aman untuk anak-anak (non-toxic)\n✅ Mudah dioleskan, tidak kering cepat\n✅ Ideal untuk sekolah, kantor & kerajinan'
+    },
+    {
+      id: 4,
+      name: 'MONTANA Gunting Stainless Steel Multipurpose STI-165',
+      img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp',
+      price: 'Rp 0',
+      tag: 'Promo',
+      category: 'Gunting',
+      needs: ['Kantor', 'Sekolah', 'Rumah', 'Bisnis'],
+      variants: ['Standard'],
+      description: 'Gunting multipurpose berbahan stainless steel premium yang kuat, tajam, dan anti karat. Handle ergonomis dengan lapisan karet lembut memberikan genggaman nyaman saat memotong dalam waktu lama. Mampu memotong kertas, karton, kain, tali, hingga plastik dengan presisi. Tahan lama dengan ketajaman yang konsisten walau digunakan berulang kali.\n\n✅ Stainless steel anti karat\n✅ Tajam dan presisi tinggi\n✅ Handle ergonomis, nyaman di tangan\n✅ Multipurpose: kertas, kain, plastik, tali\n✅ Awet, ketajaman tahan lama'
+    },
   ];
 
   const filteredProducts = products
