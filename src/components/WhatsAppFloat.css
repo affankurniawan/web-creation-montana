@@ -1,0 +1,72 @@
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.wa-float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-green-wa);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition-smooth);
+  animation: float 3s ease-in-out infinite;
+  border: none;
+  cursor: pointer;
+}
+
+.wa-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+  animation: none;
+}
+
+.wa-float-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.wa-tooltip {
+  background: var(--color-white);
+  color: var(--color-gray-800);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.wa-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .wa-float {
+    bottom: 20px;
+    right: 20px;
+  }
+  .wa-float-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .wa-float-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}

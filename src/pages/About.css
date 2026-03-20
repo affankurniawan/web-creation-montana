@@ -1,49 +1,183 @@
+.about-page {
+  overflow-x: hidden;
+}
+
+/* Hero */
 .about-hero {
-  padding-top: var(--spacing-3xl);
-  padding-bottom: var(--spacing-2xl);
+  padding: var(--spacing-4xl) 0;
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
-.about-hero h1 {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  max-width: 600px;
-}
-
-.mission-card {
-  padding: var(--spacing-xl);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-lg);
-  background: rgba(255,255,255,0.03);
-}
-
-.text-gray-300 {
-  color: #CED4DA;
-}
-
-.founder-img {
-  border-radius: var(--radius-full);
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
+.about-hero-content {
+  max-width: 700px;
   margin: 0 auto;
-  border: 4px solid var(--color-white);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.pr-4 {
+.about-hero-content h1 {
+  font-size: 2.75rem;
+  line-height: 1.15;
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-hero-sub {
+  font-size: 1.125rem;
+  color: var(--color-gray-600);
+  line-height: 1.8;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Stats */
+.about-stats {
+  padding: var(--spacing-2xl) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-yellow);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+/* Text content */
+.about-text-content {
   padding-right: var(--spacing-xl);
 }
 
-@media (max-width: 768px) {
-  .mission-card {
-    padding: var(--spacing-md);
-  }
-  .mobile-grid-cols-1 {
+.about-visual img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+}
+
+/* Value Cards */
+.value-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  text-align: center;
+  transition: all var(--transition-smooth);
+}
+
+.value-card:hover {
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.value-card-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+  color: var(--color-black);
+}
+
+.value-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Mission Cards */
+.mission-card {
+  padding: var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-smooth);
+}
+
+.mission-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.mission-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.mission-card p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Founder */
+.founder-quote {
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: var(--color-gray-700);
+  line-height: 1.8;
+  padding-left: var(--spacing-lg);
+  border-left: 3px solid var(--color-yellow);
+  margin: var(--spacing-lg) 0;
+}
+
+.founder-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.founder-img {
+  width: 85%;
+  max-width: 400px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.founder-signoff {
+  color: var(--color-black);
+}
+
+/* CTA */
+.cta-about {
+  padding: var(--spacing-4xl) 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-hero-content h1 { font-size: 2.25rem; }
+  .about-page .grid-cols-2 {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
+  .about-text-content { padding-right: 0; }
+  .about-visual { order: -1; }
+}
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-page .grid-cols-3 { grid-template-columns: 1fr; }
+  .mission-card { text-align: center; }
 }

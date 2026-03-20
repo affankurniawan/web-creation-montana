@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ShoppingCart, Menu, Search, X } from 'lucide-react';
 import './Header.css';
 
@@ -6,6 +6,13 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const siteData = [
     { title: 'Beranda', type: 'Halaman', id: 'home' },
@@ -46,58 +53,65 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
   };
 
   return (
-    <header className="header">
-      <div className="container header-container">
-        
-        {/* Mobile Menu Icon */}
-        <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Logo */}
-        <div className="logo" onClick={() => setPage('home')} style={{cursor: 'pointer'}}>
-          <img src="/logo.png" alt="Montana Logo" className="header-logo" />
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav className={`desktop-nav ${isMobileMenuOpen ? 'open' : ''}`}>
-          <a href="#" className={page === 'home' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('home'); setIsMobileMenuOpen(false); }}>Beranda</a>
-          <a href="#" className={page === 'about' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('about'); setIsMobileMenuOpen(false); }}>Tentang Kami</a>
-          <a href="#" className={page === 'product' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('product'); setIsMobileMenuOpen(false); }}>Produk</a>
-          <a href="#" className={page === 'blog' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('blog'); setIsMobileMenuOpen(false); }}>Blog</a>
-          <a href="#" className={page === 'contact' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('contact'); setIsMobileMenuOpen(false); }}>Hubungi Kami</a>
-        </nav>
-
-        {/* Icons */}
-        <div className="header-actions">
-          <button className="icon-btn" onClick={() => setIsSearchOpen(!isSearchOpen)}>
-            {isSearchOpen ? <X size={20} /> : <Search size={20} />}
-          </button>
-          <button className="icon-btn cart-btn" onClick={onCartClick}>
-            <ShoppingCart size={20} />
-            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-          </button>
-        </div>
-
+    <>
+      {/* Announcement Bar */}
+      <div className="announcement-bar">
+        Kualitas stabil dengan harga yang terjangkau, barang selalu ready —
+        <a href="#" onClick={(e) => { e.preventDefault(); setPage('product'); }}>Belanja Sekarang →</a>
       </div>
 
-      {/* Global Search Overlay */}
-      {isSearchOpen && (
-        <div className="search-overlay">
-          <div className="container">
-            <div className="search-input-wrapper">
-              <Search size={20} className="search-overlay-icon" />
-              <input 
-                type="text" 
-                placeholder="Cari kebutuhan..." 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={handleKeyDown}
-                autoFocus
-              />
-            </div>
-            
-            <div className="search-results">
+      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+        <div className="container header-container">
+          
+          {/* Mobile Menu Icon */}
+          <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+
+          {/* Logo */}
+          <div className="logo" onClick={() => setPage('home')} style={{cursor: 'pointer'}}>
+            <img src="/logo.png" alt="Montana Logo" className="header-logo" />
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className={`desktop-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+            <a href="#" className={page === 'home' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('home'); setIsMobileMenuOpen(false); }}>Beranda</a>
+            <a href="#" className={page === 'about' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('about'); setIsMobileMenuOpen(false); }}>Tentang Kami</a>
+            <a href="#" className={page === 'product' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('product'); setIsMobileMenuOpen(false); }}>Produk</a>
+            <a href="#" className={page === 'blog' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('blog'); setIsMobileMenuOpen(false); }}>Blog</a>
+            <a href="#" className={page === 'contact' ? 'active' : ''} onClick={(e) => { e.preventDefault(); setPage('contact'); setIsMobileMenuOpen(false); }}>Hubungi Kami</a>
+          </nav>
+
+          {/* Icons */}
+          <div className="header-actions">
+            <button className="icon-btn" onClick={() => setIsSearchOpen(!isSearchOpen)}>
+              {isSearchOpen ? <X size={20} /> : <Search size={20} />}
+            </button>
+            <button className="icon-btn cart-btn" onClick={onCartClick}>
+              <ShoppingCart size={20} />
+              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+            </button>
+          </div>
+
+        </div>
+
+        {/* Search Overlay */}
+        {isSearchOpen && (
+          <div className="search-overlay">
+            <div className="container">
+              <div className="search-input-wrapper">
+                <Search size={18} className="search-overlay-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Cari produk, kategori, atau halaman..." 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  autoFocus
+                />
+              </div>
+              
+              <div className="search-results">
                 {searchResults.length > 0 ? (
                   <ul>
                     {searchResults.map((result, idx) => (
@@ -108,12 +122,13 @@ export default function Header({ page, setPage, cartCount, onCartClick }) {
                     ))}
                   </ul>
                 ) : (
-                  <div className="no-results">Tidak ada hasil yang cocok untuk "{searchQuery}"</div>
+                  <div className="no-results">Tidak ada hasil untuk "{searchQuery}"</div>
                 )}
               </div>
+            </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 }
