@@ -244,17 +244,39 @@
     align-items: center;
     gap: 0.5rem;
     z-index: 200;
+    opacity: 0;
+    visibility: hidden;
     transform: translateX(-100%);
-    transition: transform var(--transition-smooth);
+    transition: all var(--transition-smooth);
   }
 
   .desktop-nav.open {
+    opacity: 1;
+    visibility: visible;
     transform: translateX(0);
   }
 
   .desktop-nav a {
     font-size: 1.25rem;
     padding: 0.75rem 1.5rem;
+    color: var(--color-gray-700);
+  }
+
+  .desktop-nav a:hover {
+    color: var(--color-black);
+    background: var(--color-gray-100);
+  }
+
+  .desktop-nav a.active {
+    color: var(--color-black);
+    font-weight: 700;
+    background: var(--color-gray-100);
+  }
+
+  /* Mobile menu btn stays white on dark header */
+  .mobile-menu-btn {
+    z-index: 201;
+    color: var(--color-white);
   }
 
   .header-logo {

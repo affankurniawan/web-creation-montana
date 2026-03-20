@@ -181,3 +181,10 @@
   .about-page .grid-cols-3 { grid-template-columns: 1fr; }
   .mission-card { text-align: center; }
 }
+
+@media (max-width: 480px) {
+  .about-hero-content h1 { font-size: 1.75rem; }
+  .about-hero-sub { font-size: 1rem; }
+  .stat-number { font-size: 1.75rem; }
+  .founder-quote { font-size: 0.9375rem; padding-left: var(--spacing-md); }
+}

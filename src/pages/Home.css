@@ -445,8 +445,9 @@
   padding: var(--spacing-4xl) 0;
 }
 
-/* Responsive */
+/* Responsive — Tablet landscape */
 @media (max-width: 1024px) {
+  .hero-text-box h1 { font-size: 3.25rem; }
   .hero-section {
     min-height: auto;
     height: 50vw;
@@ -476,20 +477,59 @@
   }
 }
 
+/* Responsive — Tablet portrait */
 @media (max-width: 768px) {
-  .hero-text-box h1 { font-size: 3rem; }
+  .hero-text-box h1 { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1rem; }
   .custom-cta-positioning { margin-top: 38vw; }
   .trust-markers-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Shop by Use cards stack */
+  .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .use-card {
+    height: 220px;
+  }
+
+  /* Testimonials 1 column */
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Marketplace strip */
+  .mp-strip-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mp-strip-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
+/* Responsive — Mobile */
 @media (max-width: 480px) {
+  .hero-text-box h1 { font-size: 2rem; }
+  .hero-subtitle { font-size: 0.875rem; }
   .custom-cta-positioning { margin-top: 40vw; }
+  .cta-btn { font-size: 0.875rem; padding: 0.75rem 1.5rem; }
   .trust-markers-grid { grid-template-columns: 1fr; }
-  .mp-strip-content { flex-direction: column; text-align: center; }
-  .mp-strip-buttons { justify-content: center; }
+  .product-grid { grid-template-columns: 1fr !important; }
+
+  .section-subtitle { font-size: 0.9375rem; }
+  .section-label { font-size: 0.6875rem; }
+
+  /* Marketplace strip buttons smaller */
+  .mp-strip-btn {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.6875rem;
+  }
+  .mp-strip-text h3 { font-size: 1.125rem; }
+  .mp-strip-text p { font-size: 0.8125rem; }
 }
 
 /* Marketplace Strip */
