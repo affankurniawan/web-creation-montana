@@ -1,0 +1,24 @@
+<section class="marketplace-strip">
+  <div class="container">
+    <div class="mp-strip-content">
+      <div class="mp-strip-text">
+        <h3>{{ section.settings.heading }}</h3>
+        <p>{{ section.settings.subheading }}</p>
+      </div>
+      <div class="mp-strip-buttons">
+        {% render 'marketplace-buttons', size: 'medium' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Marketplace Strip",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Judul", "default": "Belanja di Official Store Kami" },
+    { "type": "text", "id": "subheading", "label": "Sub Judul", "default": "Tersedia di marketplace favorit Anda — produk resmi, harga terbaik." }
+  ],
+  "presets": [{ "name": "Marketplace Strip" }]
+}
+{% endschema %}

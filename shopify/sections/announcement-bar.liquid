@@ -1,0 +1,30 @@
+<div class="announcement-bar">
+  {{ section.settings.text }}
+  <a href="{{ section.settings.link_url }}">{{ section.settings.link_text }}</a>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Teks Pengumuman",
+      "default": "Kualitas stabil dengan harga yang terjangkau, barang selalu ready —"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Teks Link",
+      "default": "Belanja Sekarang →"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "URL Link",
+      "default": "/collections/all"
+    }
+  ]
+}
+{% endschema %}

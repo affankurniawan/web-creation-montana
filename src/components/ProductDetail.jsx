@@ -1,15 +1,22 @@
-import { useState } from 'react';
-import { X, ShieldCheck, Truck, RotateCcw, ShoppingCart } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, ShieldCheck, Truck, RotateCcw, ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react';
 import './ProductDetail.css';
 
 export default function ProductDetail({ product, isOpen, onClose, addToCart }) {
   const [selectedVariant, setSelectedVariant] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [activeImage, setActiveImage] = useState(0);
+
+  // Reset active image when product changes
+  useEffect(() => {
+    setActiveImage(0);
+  }, [product]);
 
   if (!product) return null;
 
   const variants = product.variants || ['Standard'];
   const badge = product.tag;
+  const images = product.images || [product.img];
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
@@ -37,6 +44,9 @@ export default function ProductDetail({ product, isOpen, onClose, addToCart }) {
     setQuantity(prev => Math.max(1, Math.min(99, prev + delta)));
   };
 
+  const prevImage = () => setActiveImage(prev => prev === 0 ? images.length - 1 : prev - 1);
+  const nextImage = () => setActiveImage(prev => prev === images.length - 1 ? 0 : prev + 1);
+
   return (
     <>
       <div className={`product-detail-overlay ${isOpen ? 'open' : ''}`} onClick={onClose} />
@@ -46,14 +56,35 @@ export default function ProductDetail({ product, isOpen, onClose, addToCart }) {
         </button>
 
         <div className="pd-layout">
-          {/* Image */}
+          {/* Image Gallery */}
           <div className="pd-image-section">
             {badge && (
               <span className={`pd-badge pd-badge-${badge.toLowerCase()}`}>
                 {badge}
               </span>
             )}
-            <img src={product.img} alt={product.name} />
+            <div className="pd-gallery">
+              <img src={images[activeImage]} alt={product.name} className="pd-main-img" />
+              {images.length > 1 && (
+                <>
+                  <button className="pd-nav-btn pd-nav-prev" onClick={prevImage}><ChevronLeft size={18} /></button>
+                  <button className="pd-nav-btn pd-nav-next" onClick={nextImage}><ChevronRight size={18} /></button>
+                </>
+              )}
+            </div>
+            {images.length > 1 && (
+              <div className="pd-thumbnails">
+                {images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    className={`pd-thumb ${activeImage === idx ? 'active' : ''}`}
+                    onClick={() => setActiveImage(idx)}
+                  >
+                    <img src={img} alt={`${product.name} ${idx + 1}`} />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Info */}

@@ -1,0 +1,95 @@
+<section class="section">
+  <div class="container">
+    <div class="section-intro text-center mb-5">
+      <span class="section-label">{{ section.settings.label }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="section-subtitle">{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3 product-grid">
+      {%- assign collection = collections[section.settings.collection] -%}
+      {%- if collection != blank and collection.products.size > 0 -%}
+        {%- for product in collection.products limit: section.settings.limit -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      {%- else -%}
+        {%- comment -%} Fallback demo products when no collection is set {%- endcomment -%}
+        <div class="product-card hover-lift">
+          <div class="product-img-wrap">
+            <img src="{{ 'kalkulator-mtc200p.png' | asset_url }}" alt="Montana Kalkulator MTC-200P" class="product-img" loading="lazy">
+            <span class="product-badge badge-sale">Terlaris</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Kalkulator</span>
+            <h4 class="product-name">MONTANA Kalkulator 8 Digit Big Display MTC-200 P</h4>
+            <div class="product-price">
+              <span class="price-current">Lihat Harga</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card hover-lift">
+          <div class="product-img-wrap">
+            <img src="{{ 'spidol-mp12.png' | asset_url }}" alt="Montana Spidol MP-12" class="product-img" loading="lazy">
+            <span class="product-badge badge-promo">Promo</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Spidol</span>
+            <h4 class="product-name">MONTANA Spidol Permanen Round Tip MP-12</h4>
+            <div class="product-price">
+              <span class="price-current">Lihat Harga</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card hover-lift">
+          <div class="product-img-wrap">
+            <img src="{{ 'lem-gs25.webp' | asset_url }}" alt="Montana Lem GS-25" class="product-img" loading="lazy">
+            <span class="product-badge badge-new">Terbaru</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Lem</span>
+            <h4 class="product-name">MONTANA Glue Stick Lem Batang 25g GS-25</h4>
+            <div class="product-price">
+              <span class="price-current">Lihat Harga</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card hover-lift">
+          <div class="product-img-wrap">
+            <img src="{{ 'gunting-sti165.webp' | asset_url }}" alt="Montana Gunting STI-165" class="product-img" loading="lazy">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Gunting</span>
+            <h4 class="product-name">MONTANA Gunting Stainless Steel STI-165</h4>
+            <div class="product-price">
+              <span class="price-current">Lihat Harga</span>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="{{ collection.url | default: '/collections/all' }}" class="btn btn-outline">
+        {{ section.settings.cta_text }}
+        {% render 'svg-icons', icon: 'arrow-right' %}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Pilihan Terbaik" },
+    { "type": "text", "id": "heading", "label": "Judul", "default": "Produk Unggulan" },
+    { "type": "text", "id": "subheading", "label": "Sub Judul", "default": "Produk paling populer yang dipilih oleh pelanggan kami." },
+    { "type": "collection", "id": "collection", "label": "Koleksi" },
+    { "type": "range", "id": "limit", "label": "Jumlah Produk", "min": 2, "max": 12, "step": 1, "default": 4 },
+    { "type": "text", "id": "cta_text", "label": "Teks Tombol", "default": "Lihat Semua Produk" }
+  ]
+}
+{% endschema %}

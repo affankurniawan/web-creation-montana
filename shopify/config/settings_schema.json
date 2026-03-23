@@ -1,0 +1,139 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Montana",
+    "theme_version": "1.0.0",
+    "theme_author": "Montana Team",
+    "theme_documentation_url": "https://montanastationery.com",
+    "theme_support_email": "admin@montanastationery.com"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_height",
+        "label": "Tinggi Logo (px)",
+        "min": 20,
+        "max": 80,
+        "step": 2,
+        "default": 36
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Warna",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Warna Utama (Kuning)",
+        "default": "#ffd800"
+      },
+      {
+        "type": "color",
+        "id": "color_black",
+        "label": "Warna Hitam",
+        "default": "#0a0a0a"
+      },
+      {
+        "type": "color",
+        "id": "color_red",
+        "label": "Warna Merah",
+        "default": "#eb0000"
+      },
+      {
+        "type": "color",
+        "id": "color_blue",
+        "label": "Warna Biru",
+        "default": "#00b2ff"
+      }
+    ]
+  },
+  {
+    "name": "WhatsApp",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "Nomor WhatsApp",
+        "default": "6281234567890",
+        "info": "Format internasional tanpa tanda +"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_message",
+        "label": "Pesan Default WhatsApp",
+        "default": "Halo Montana! Saya tertarik dengan produk Anda."
+      },
+      {
+        "type": "checkbox",
+        "id": "whatsapp_float_enabled",
+        "label": "Tampilkan Tombol WhatsApp Mengambang",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Marketplace",
+    "settings": [
+      {
+        "type": "text",
+        "id": "shopee_url",
+        "label": "URL Shopee Official Store",
+        "default": "https://shopee.co.id/montanaofficial"
+      },
+      {
+        "type": "text",
+        "id": "tokopedia_url",
+        "label": "URL Tokopedia Official Store",
+        "default": "https://www.tokopedia.com/montanaofficial"
+      },
+      {
+        "type": "text",
+        "id": "tiktok_url",
+        "label": "URL TikTok Shop",
+        "default": "https://shop.tiktok.com/montanaofficial"
+      },
+      {
+        "type": "text",
+        "id": "lazada_url",
+        "label": "URL Lazada Official Store",
+        "default": "https://www.lazada.co.id/shop/montanaofficial"
+      }
+    ]
+  },
+  {
+    "name": "Media Sosial",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "URL Instagram",
+        "default": "https://www.instagram.com/montanaofficial"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "URL TikTok",
+        "default": "https://www.tiktok.com/@montanaofficial"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "URL YouTube",
+        "default": "https://www.youtube.com/@montanaofficial"
+      }
+    ]
+  }
+]

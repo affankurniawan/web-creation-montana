@@ -1,0 +1,56 @@
+<section class="section bg-off-white">
+  <div class="container">
+    <div class="section-intro text-center mb-5">
+      <span class="section-label">{{ section.settings.label }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="section-subtitle">{{ section.settings.subheading }}</p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.link_url }}" class="use-card" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <div class="use-img" style="background-image: url('{{ block.settings.image | image_url: width: 800 }}')"></div>
+          {%- else -%}
+            {%- assign fallback_imgs = 'school-category.png,office-category.png' | split: ',' -%}
+            <div class="use-img" style="background-image: url('{{ fallback_imgs[forloop.index0] | asset_url }}')"></div>
+          {%- endif -%}
+          <div class="use-info">
+            <span class="use-label">{{ block.settings.label }}</span>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category Cards",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Kategori" },
+    { "type": "text", "id": "heading", "label": "Judul", "default": "Belanja Berdasarkan Kebutuhan" },
+    { "type": "text", "id": "subheading", "label": "Sub Judul", "default": "Temukan produk yang tepat untuk setiap kebutuhan Anda." }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Kategori",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Gambar" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Perlengkapan" },
+        { "type": "text", "id": "title", "label": "Judul", "default": "Sekolah" },
+        { "type": "text", "id": "description", "label": "Deskripsi", "default": "Kebutuhan dasar yang dapat diandalkan." },
+        { "type": "text", "id": "link_url", "label": "URL", "default": "/collections/all" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "category", "settings": { "label": "Perlengkapan", "title": "Sekolah", "description": "Kebutuhan dasar yang dapat diandalkan untuk semester ini." } },
+      { "type": "category", "settings": { "label": "Perlengkapan", "title": "Kantor", "description": "Rapi, dapat diandalkan, dan efisien." } }
+    ]
+  }
+}
+{% endschema %}

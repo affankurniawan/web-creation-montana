@@ -1,0 +1,47 @@
+<section class="trust-markers-section">
+  <div class="container">
+    <div class="trust-markers-grid stagger-children">
+      {%- for block in section.blocks -%}
+        <div class="trust-item" {{ block.shopify_attributes }}>
+          <div class="trust-icon-wrap">
+            {% render 'svg-icons', icon: block.settings.icon, size: 28, fill: 'none', stroke: 'currentColor' %}
+          </div>
+          <h4>{{ block.settings.title }}</h4>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust Markers",
+  "blocks": [
+    {
+      "type": "marker",
+      "name": "Trust Marker",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Ikon", "options": [
+          { "value": "shield-check", "label": "Shield Check" },
+          { "value": "star", "label": "Star" },
+          { "value": "truck", "label": "Truck" },
+          { "value": "rotate-ccw", "label": "Return" },
+          { "value": "arrow-right", "label": "Arrow" }
+        ], "default": "shield-check" },
+        { "type": "text", "id": "title", "label": "Judul", "default": "Kualitas Tahan Lama" },
+        { "type": "text", "id": "description", "label": "Deskripsi", "default": "Produk dirancang untuk penggunaan jangka panjang." }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "marker", "settings": { "icon": "shield-check", "title": "Kualitas Tahan Lama", "description": "Produk yang dirancang untuk penggunaan jangka panjang dengan material premium." } },
+      { "type": "marker", "settings": { "icon": "star", "title": "Harga Terjangkau", "description": "Kualitas tinggi dengan harga yang ramah di kantong untuk semua kalangan." } },
+      { "type": "marker", "settings": { "icon": "shield-check", "title": "Desain Praktis", "description": "Dirancang ergonomis untuk kemudahan dan kenyamanan penggunaan sehari-hari." } },
+      { "type": "marker", "settings": { "icon": "truck", "title": "Siap Setiap Hari", "description": "Stok selalu tersedia dan siap kirim ke seluruh Indonesia." } },
+      { "type": "marker", "settings": { "icon": "shield-check", "title": "Garansi Kepuasan", "description": "Jaminan kualitas dan layanan purna jual terbaik untuk pelanggan." } }
+    ]
+  }
+}
+{% endschema %}

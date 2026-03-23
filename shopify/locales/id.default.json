@@ -1,0 +1,94 @@
+{
+  "general": {
+    "search": "Cari",
+    "search_placeholder": "Cari produk, kategori, atau halaman...",
+    "no_results": "Tidak ada hasil untuk \"{{ query }}\"",
+    "close": "Tutup",
+    "cart": "Keranjang",
+    "menu": "Menu"
+  },
+  "header": {
+    "announcement": "Kualitas stabil dengan harga yang terjangkau, barang selalu ready",
+    "shop_now": "Belanja Sekarang →",
+    "nav_home": "Beranda",
+    "nav_about": "Tentang Kami",
+    "nav_products": "Produk",
+    "nav_blog": "Blog",
+    "nav_contact": "Hubungi Kami"
+  },
+  "cart": {
+    "title": "Keranjang",
+    "empty_title": "Keranjang kosong",
+    "empty_desc": "Tambahkan produk yang Anda minati untuk melanjutkan pemesanan.",
+    "view_products": "Lihat Produk",
+    "estimate_total": "Estimasi Total",
+    "shipping_note": "belum termasuk ongkir",
+    "shipping_from": "Pengiriman dari",
+    "shipping_city": "Jakarta",
+    "price_note": "Harga final & ongkir dikonfirmasi via WhatsApp",
+    "order_wa": "Pesan via WhatsApp",
+    "buy_at": "Atau beli langsung di:",
+    "remove": "Hapus"
+  },
+  "product": {
+    "add_to_cart": "Tambah ke Keranjang",
+    "wholesale_wa": "Grosir via WhatsApp",
+    "buy_marketplace": "Beli di Marketplace",
+    "quality_guarantee": "Kualitas Terjamin",
+    "ready_ship": "Siap Kirim",
+    "returnable": "Bisa Retur",
+    "select_variant": "Pilih Varian",
+    "quantity": "Jumlah",
+    "sale": "Sale",
+    "add_button": "Tambah +"
+  },
+  "collection": {
+    "all_products": "Semua Produk",
+    "products_found": "produk ditemukan",
+    "sort_featured": "Unggulan",
+    "sort_price_asc": "Harga: Rendah → Tinggi",
+    "sort_price_desc": "Harga: Tinggi → Rendah",
+    "sort_newest": "Terbaru",
+    "category": "Kategori",
+    "needs": "Kebutuhan",
+    "all": "Semua",
+    "free_shipping_promo": "🔥 Gratis Ongkir untuk Pembelian Grosir — Hubungi kami untuk penawaran spesial!"
+  },
+  "home": {
+    "shop_now": "Belanja Kebutuhan",
+    "view_all": "Lihat Semua Produk",
+    "learn_more": "Pelajari Lebih Lanjut",
+    "contact_us": "Hubungi Kami",
+    "trusted_by": "Telah Dipercaya Oleh"
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "send_message": "Kirim Pesan",
+    "name": "Nama Lengkap",
+    "email": "Email",
+    "subject": "Subjek",
+    "message": "Pesan",
+    "send_wa": "Kirim via WhatsApp",
+    "info_title": "Informasi Kontak",
+    "hours": "Jam Operasional",
+    "hours_value": "Sen – Jum, 09:00 – 17:00 WIB",
+    "location": "Lokasi",
+    "location_value": "Indonesia",
+    "bulk_title": "Pesanan Grosir",
+    "bulk_desc": "Ingin melengkapi seluruh kantor atau sekolah Anda? Kami menawarkan harga khusus untuk pesanan dalam jumlah besar.",
+    "download_catalog": "Unduh Katalog (PDF)"
+  },
+  "footer": {
+    "tagline": "Alat yang lebih baik untuk generasi yang lebih cerdas. Kebutuhan tahan lama dengan harga cerdas.",
+    "products": "Produk",
+    "catalog": "Katalog Produk",
+    "about_montana": "Tentang Montana",
+    "services": "Layanan",
+    "contact": "Hubungi Kami",
+    "wholesale": "Pesanan Grosir",
+    "marketplace": "Marketplace",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Syarat & Ketentuan",
+    "copyright": "Montana. Hak cipta dilindungi undang-undang."
+  }
+}

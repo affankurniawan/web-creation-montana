@@ -1,0 +1,11 @@
+{%- comment -%} Product Detail Modal — used on product.liquid page {%- endcomment -%}
+
+<div class="product-detail-overlay" data-pd-overlay></div>
+<div class="product-detail-modal" data-pd-modal>
+  <button class="pd-close-btn" aria-label="{{ 'general.close' | t }}">
+    {% render 'svg-icons', icon: 'x' %}
+  </button>
+  {%- comment -%} Content is populated via JavaScript on product pages or via Shopify's native product template {%- endcomment -%}
+  <div class="pd-layout" id="product-detail-content">
+  </div>
+</div>

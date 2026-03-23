@@ -1,0 +1,83 @@
+<header class="header" data-header>
+  <div class="container header-container">
+
+    {%- comment -%} Mobile Menu Button {%- endcomment -%}
+    <button class="mobile-menu-btn" aria-label="{{ 'general.menu' | t }}" aria-expanded="false">
+      <span class="menu-icon">{% render 'svg-icons', icon: 'menu' %}</span>
+      <span class="close-icon" style="display:none">{% render 'svg-icons', icon: 'x' %}</span>
+    </button>
+
+    {%- comment -%} Logo {%- endcomment -%}
+    <div class="logo">
+      <a href="/">
+        {%- if settings.logo != blank -%}
+          <img src="{{ settings.logo | image_url: height: settings.logo_height }}" alt="{{ shop.name }}" class="header-logo" height="{{ settings.logo_height }}">
+        {%- else -%}
+          <img src="{{ 'logo.png' | asset_url }}" alt="Montana" class="header-logo" height="36">
+        {%- endif -%}
+      </a>
+    </div>
+
+    {%- comment -%} Desktop Navigation {%- endcomment -%}
+    <nav class="desktop-nav">
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    {%- comment -%} Actions {%- endcomment -%}
+    <div class="header-actions">
+      <button class="icon-btn search-toggle-btn" aria-label="{{ 'general.search' | t }}">
+        {% render 'svg-icons', icon: 'search' %}
+      </button>
+      <button class="icon-btn cart-btn" data-cart-toggle aria-label="{{ 'general.cart' | t }}">
+        {% render 'svg-icons', icon: 'cart' %}
+        <span class="cart-badge" {% if cart.item_count == 0 %}style="display:none"{% endif %}>{{ cart.item_count }}</span>
+      </button>
+    </div>
+
+  </div>
+
+  {%- comment -%} Search Overlay {%- endcomment -%}
+  <div class="search-overlay">
+    <div class="container">
+      <div class="search-input-wrapper">
+        <span class="search-overlay-icon">{% render 'svg-icons', icon: 'search', size: 18 %}</span>
+        <form action="/search" method="get" role="search">
+          <input type="text" name="q" placeholder="{{ 'general.search_placeholder' | t }}" autocomplete="off">
+        </form>
+      </div>
+      <div class="search-results">
+        <ul>
+          {%- for link in section.settings.search_menu.links -%}
+            <li>
+              <a href="{{ link.url }}" style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none">
+                <span class="result-title">{{ link.title }}</span>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu Navigasi",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "search_menu",
+      "label": "Rekomendasi Pencarian",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

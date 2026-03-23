@@ -1,0 +1,17 @@
+<section class="section purpose-strip bg-yellow text-center">
+  <div class="container">
+    <h2 class="mb-2">{{ section.settings.heading }}</h2>
+    <p class="purpose-text mb-0 text-black-80">{{ section.settings.description }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Purpose Strip",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Judul", "default": "Alat yang lebih baik untuk generasi yang lebih cerdas." },
+    { "type": "textarea", "id": "description", "label": "Deskripsi", "default": "Setiap pena, spidol, dan kebutuhan sehari-hari dapat mendukung kebiasaan yang lebih baik. Dengan membuat alat cerdas secara lebih mudah diakses, kami membangun fondasi untuk kemajuan di dunia pendidikan maupun perkantoran." }
+  ],
+  "presets": [{ "name": "Purpose Strip" }]
+}
+{% endschema %}

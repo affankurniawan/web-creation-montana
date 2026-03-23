@@ -1,0 +1,41 @@
+{%- comment -%} Article Template — Individual blog post {%- endcomment -%}
+<main class="blog-page">
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div class="mb-4">
+        <a href="{{ blog.url }}" class="blog-read-more" style="margin-bottom:var(--spacing-lg);display:inline-flex">
+          {% render 'svg-icons', icon: 'chevron-left', size: 14 %}
+          Kembali ke Blog
+        </a>
+      </div>
+
+      {%- if article.image -%}
+        <div class="blog-img-wrapper" style="border-radius:var(--radius-xl);overflow:hidden;margin-bottom:var(--spacing-xl)">
+          <img src="{{ article.image | image_url: width: 1200 }}" alt="{{ article.title }}" style="width:100%;height:auto">
+        </div>
+      {%- endif -%}
+
+      <div class="blog-meta mb-2">
+        <span>{{ article.published_at | date: '%d %b %Y' }}</span>
+        <span class="blog-dot">·</span>
+        <span>{{ article.author }}</span>
+        <span class="blog-dot">·</span>
+        <span>{{ article.content | strip_html | split: ' ' | size | divided_by: 200 | plus: 1 }} menit baca</span>
+      </div>
+
+      <h1 style="margin-bottom:var(--spacing-xl)">{{ article.title }}</h1>
+
+      <div class="rte" style="line-height:1.8;color:var(--color-gray-700)">
+        {{ article.content }}
+      </div>
+
+      {%- if article.tags.size > 0 -%}
+        <div style="margin-top:var(--spacing-xl);padding-top:var(--spacing-lg);border-top:1px solid var(--color-gray-200)">
+          {%- for tag in article.tags -%}
+            <span class="catalog-badge badge-terbaru" style="margin-right:0.5rem">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+</main>

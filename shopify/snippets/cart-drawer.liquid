@@ -1,0 +1,76 @@
+{%- comment -%} Cart Drawer — rendered in theme.liquid {%- endcomment -%}
+
+<div class="cart-overlay" data-cart-overlay></div>
+<div class="cart-drawer" data-cart-drawer>
+
+  <div class="cart-header">
+    <h2>{{ 'cart.title' | t }} ({{ cart.item_count }})</h2>
+    <button class="close-cart-btn" aria-label="{{ 'general.close' | t }}">
+      {% render 'svg-icons', icon: 'x' %}
+    </button>
+  </div>
+
+  <div class="cart-items-container">
+    {%- if cart.item_count == 0 -%}
+      <div class="empty-cart">
+        {% render 'svg-icons', icon: 'shopping-bag' %}
+        <p class="empty-cart-title">{{ 'cart.empty_title' | t }}</p>
+        <p class="empty-cart-desc">{{ 'cart.empty_desc' | t }}</p>
+        <a href="/collections/all" class="btn btn-primary">{{ 'cart.view_products' | t }}</a>
+      </div>
+    {%- else -%}
+      <ul class="cart-list">
+        {%- for item in cart.items -%}
+          <li class="cart-item">
+            <img src="{{ item.image | image_url: width: 128 }}" alt="{{ item.title }}" class="cart-item-img" width="64" height="64">
+            <div class="cart-item-info">
+              <h4 class="cart-item-title">{{ item.product.title }}</h4>
+              <span class="cart-item-price">{{ item.price | money }}</span>
+              <div class="cart-item-actions">
+                <div class="cart-qty-controls" data-qty-wrapper>
+                  <button class="cart-qty-btn" data-qty-change="-1">−</button>
+                  <span class="cart-qty-num">{{ item.quantity }}</span>
+                  <button class="cart-qty-btn" data-qty-change="1">+</button>
+                </div>
+                <a href="/cart/change?id={{ item.key }}&quantity=0" class="remove-btn" aria-label="{{ 'cart.remove' | t }}">
+                  {% render 'svg-icons', icon: 'trash' %}
+                </a>
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+
+  {%- if cart.item_count > 0 -%}
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span class="summary-label">{{ 'cart.estimate_total' | t }} <small>({{ 'cart.shipping_note' | t }})</small></span>
+        <span class="summary-value">{{ cart.total_price | money }}</span>
+      </div>
+      <p class="cart-shipping-origin">📦 {{ 'cart.shipping_from' | t }} <strong>{{ 'cart.shipping_city' | t }}</strong></p>
+      <div class="cart-couriers">
+        <span class="courier-tag">JNE</span>
+        <span class="courier-tag">J&T</span>
+        <span class="courier-tag">SiCepat</span>
+        <span class="courier-tag">AnterAja</span>
+        <span class="courier-tag">Ninja</span>
+      </div>
+      <p class="cart-note">{{ 'cart.price_note' | t }}</p>
+
+      <button class="checkout-btn checkout-btn-wa" data-wa-number="{{ settings.whatsapp_number }}">
+        {% render 'svg-icons', icon: 'whatsapp', size: 16 %}
+        {{ 'cart.order_wa' | t }}
+      </button>
+
+      <div class="cart-mp-links">
+        <span class="mp-links-label">{{ 'cart.buy_at' | t }}</span>
+        <div class="mp-links-row">
+          {% render 'marketplace-buttons', size: 'small' %}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+</div>

@@ -1,0 +1,74 @@
+{%- comment -%} About Page Template — replaces About.jsx {%- endcomment -%}
+<main class="about-page">
+
+  {%- comment -%} Hero {%- endcomment -%}
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-content text-center">
+        <span class="section-label">Tentang Montana</span>
+        <h1>Kami percaya alat yang baik tidak boleh sulit dijangkau.</h1>
+        <p class="about-hero-sub">Montana adalah merek bernilai cerdas yang dirancang untuk membuat produk sehari-hari berkualitas tinggi lebih mudah diakses oleh generasi ini.</p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} Stats {%- endcomment -%}
+  <section class="about-stats bg-black">
+    <div class="container">
+      <div class="stats-grid stagger-children">
+        <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Produk SKU</span></div>
+        <div class="stat-item"><span class="stat-number">50K+</span><span class="stat-label">Pelanggan</span></div>
+        <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Kota Terjangkau</span></div>
+        <div class="stat-item"><span class="stat-number">4.8★</span><span class="stat-label">Rating Pelanggan</span></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} Page Content {%- endcomment -%}
+  <section class="section">
+    <div class="container">
+      <div class="about-text-content" style="max-width:800px;margin:0 auto">
+        {{ page.content }}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} Values {%- endcomment -%}
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="section-intro text-center mb-5">
+        <span class="section-label">Nilai Kami</span>
+        <h2>Prinsip Montana</h2>
+      </div>
+      <div class="grid grid-cols-3 gap-4 stagger-children">
+        <div class="value-card">
+          <div class="value-card-icon">{% render 'svg-icons', icon: 'shield-check', size: 36 %}</div>
+          <h3>Accessible</h3>
+          <p>Alat berkualitas yang mudah dijangkau oleh semua kalangan—karena setiap orang berhak mendapatkan yang terbaik.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-icon">{% render 'svg-icons', icon: 'shield-check', size: 36 %}</div>
+          <h3>Reliable</h3>
+          <p>Produk yang bisa diandalkan setiap hari, dari pagi hingga malam, dari sekolah hingga kantor.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card-icon">{% render 'svg-icons', icon: 'shield-check', size: 36 %}</div>
+          <h3>Smart Value</h3>
+          <p>Kualitas premium tanpa harga premium. Investasi cerdas untuk kebutuhan sehari-hari Anda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} CTA {%- endcomment -%}
+  <section class="section text-center bg-yellow cta-about">
+    <div class="container">
+      <h2 class="text-black mb-2">Mulai Membuat Pilihan Lebih Cerdas</h2>
+      <p class="text-black-80 mb-4 max-w-600 mx-auto">Jelajahi katalog lengkap Montana dan temukan produk yang tepat untuk kebutuhan Anda.</p>
+      <a href="/collections/all" class="btn btn-secondary btn-lg">
+        Belanja Kebutuhan
+        {% render 'svg-icons', icon: 'arrow-right', size: 18 %}
+      </a>
+    </div>
+  </section>
+</main>

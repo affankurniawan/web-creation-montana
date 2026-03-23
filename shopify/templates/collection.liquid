@@ -1,0 +1,158 @@
+{%- comment -%} Collection Template — replaces Product.jsx {%- endcomment -%}
+<main class="product-page">
+
+  {%- comment -%} Proof Strip {%- endcomment -%}
+  <div class="proof-strip">
+    <span>{{ 'collection.free_shipping_promo' | t }}</span>
+  </div>
+
+  <div class="container product-layout">
+
+    {%- comment -%} Sidebar Filters {%- endcomment -%}
+    <aside class="product-sidebar">
+      <div class="sidebar-search mb-4">
+        <span class="sidebar-search-icon">{% render 'svg-icons', icon: 'search', size: 16 %}</span>
+        <form action="/search" method="get">
+          <input type="hidden" name="type" value="product">
+          <input type="text" name="q" placeholder="Cari produk..." value="{{ search.terms }}">
+        </form>
+      </div>
+
+      <div class="filter-group mb-4">
+        <h3 class="filter-header">
+          {% render 'svg-icons', icon: 'search', size: 16 %}
+          {{ 'collection.category' | t }}
+        </h3>
+        <ul class="filter-list">
+          <li class="{% unless current_tags %}active{% endunless %}">
+            <a href="{{ collection.url }}" style="text-decoration:none;color:inherit">{{ 'collection.all' | t }}</a>
+          </li>
+          {%- for tag in collection.all_tags -%}
+            <li class="{% if current_tags contains tag %}active{% endif %}">
+              <a href="{{ collection.url }}/{{ tag | handle }}" style="text-decoration:none;color:inherit">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+          {%- if collection.all_tags.size == 0 -%}
+            <li><a href="#" style="text-decoration:none;color:inherit">Kalkulator</a></li>
+            <li><a href="#" style="text-decoration:none;color:inherit">Spidol</a></li>
+            <li><a href="#" style="text-decoration:none;color:inherit">Lem</a></li>
+            <li><a href="#" style="text-decoration:none;color:inherit">Gunting</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </aside>
+
+    {%- comment -%} Main Product Grid {%- endcomment -%}
+    <section class="product-main">
+      <div class="product-header">
+        <div>
+          <h2 class="mb-0">{{ collection.title | default: 'Semua Produk' }}</h2>
+          {%- if collection.products_count > 0 -%}
+            <p class="product-count">{{ collection.products_count }} {{ 'collection.products_found' | t }}</p>
+          {%- else -%}
+            <p class="product-count">4 produk ditemukan</p>
+          {%- endif -%}
+        </div>
+        <div class="sort-dropdown">
+          <select onchange="window.location.href=this.value">
+            <option value="{{ collection.url }}?sort_by=manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>{{ 'collection.sort_featured' | t }}</option>
+            <option value="{{ collection.url }}?sort_by=price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>{{ 'collection.sort_price_asc' | t }}</option>
+            <option value="{{ collection.url }}?sort_by=price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>{{ 'collection.sort_price_desc' | t }}</option>
+            <option value="{{ collection.url }}?sort_by=created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>{{ 'collection.sort_newest' | t }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="catalog-grid stagger-children">
+        {%- paginate collection.products by 12 -%}
+          {%- if collection.products.size > 0 -%}
+            {%- for product in collection.products -%}
+              {% render 'product-card', product: product %}
+            {%- endfor -%}
+          {%- else -%}
+            {%- comment -%} Fallback demo products {%- endcomment -%}
+            <div class="product-card hover-lift">
+              <div class="product-img-wrap">
+                <img src="{{ 'kalkulator-mtc200p.png' | asset_url }}" alt="Montana Kalkulator MTC-200P" class="product-img" loading="lazy">
+                <span class="product-badge badge-sale">Terlaris</span>
+              </div>
+              <div class="product-info">
+                <span class="product-category">Kalkulator</span>
+                <h4 class="product-name">MONTANA Kalkulator 8 Digit Big Display MTC-200 P</h4>
+                <p class="product-desc">Kalkulator desktop 8 digit dengan layar besar. Dual power (solar + baterai).</p>
+                <div class="product-price">
+                  <span class="price-current">Lihat Harga</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card hover-lift">
+              <div class="product-img-wrap">
+                <img src="{{ 'spidol-mp12.png' | asset_url }}" alt="Montana Spidol MP-12" class="product-img" loading="lazy">
+                <span class="product-badge badge-promo">Promo</span>
+              </div>
+              <div class="product-info">
+                <span class="product-category">Spidol</span>
+                <h4 class="product-name">MONTANA Spidol Permanen Round Tip MP-12</h4>
+                <p class="product-desc">Spidol permanen tinta non-toxic, cepat kering, dan tahan air.</p>
+                <div class="product-price">
+                  <span class="price-current">Lihat Harga</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card hover-lift">
+              <div class="product-img-wrap">
+                <img src="{{ 'lem-gs25.webp' | asset_url }}" alt="Montana Lem GS-25" class="product-img" loading="lazy">
+                <span class="product-badge badge-new">Terbaru</span>
+              </div>
+              <div class="product-info">
+                <span class="product-category">Lem</span>
+                <h4 class="product-name">MONTANA Glue Stick Lem Batang 25g GS-25</h4>
+                <p class="product-desc">Lem batang daya rekat kuat, tanpa residu. Aman untuk anak-anak.</p>
+                <div class="product-price">
+                  <span class="price-current">Lihat Harga</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card hover-lift">
+              <div class="product-img-wrap">
+                <img src="{{ 'gunting-sti165.webp' | asset_url }}" alt="Montana Gunting STI-165" class="product-img" loading="lazy">
+              </div>
+              <div class="product-info">
+                <span class="product-category">Gunting</span>
+                <h4 class="product-name">MONTANA Gunting Stainless Steel STI-165</h4>
+                <p class="product-desc">Gunting stainless steel premium, tajam, anti karat. Handle ergonomis.</p>
+                <div class="product-price">
+                  <span class="price-current">Lihat Harga</span>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endpaginate -%}
+      </div>
+
+      {%- comment -%} Pagination {%- endcomment -%}
+      {%- paginate collection.products by 12 -%}
+        {%- if paginate.pages > 1 -%}
+          <div class="pagination">
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}
+                <a href="{{ part.url }}" class="page-btn">{{ part.title }}</a>
+              {%- elsif part.title == paginate.current_page -%}
+                <span class="page-btn active">{{ part.title }}</span>
+              {%- else -%}
+                <span class="page-btn">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}" class="page-btn next">Selanjutnya »</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endpaginate -%}
+
+    </section>
+  </div>
+</main>

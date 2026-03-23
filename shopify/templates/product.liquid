@@ -1,0 +1,108 @@
+{%- comment -%} Product Template — replaces ProductDetail.jsx as a full page {%- endcomment -%}
+<main class="product-page">
+  <div class="container" style="padding-top:var(--spacing-2xl);padding-bottom:var(--spacing-3xl)">
+    <div class="pd-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);background:var(--color-white);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)">
+
+      {%- comment -%} Image Gallery {%- endcomment -%}
+      <div class="pd-image-section">
+        {%- if product.tags contains 'terlaris' -%}
+          <span class="pd-badge pd-badge-terlaris">Terlaris</span>
+        {%- elsif product.tags contains 'promo' -%}
+          <span class="pd-badge pd-badge-promo">Promo</span>
+        {%- elsif product.tags contains 'terbaru' -%}
+          <span class="pd-badge pd-badge-terbaru">Terbaru</span>
+        {%- endif -%}
+
+        <div class="pd-gallery">
+          <img src="{{ product.selected_or_first_available_variant.featured_image | default: product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" class="pd-main-img" id="main-product-img">
+          {%- if product.images.size > 1 -%}
+            <button class="pd-nav-btn pd-nav-prev">{% render 'svg-icons', icon: 'chevron-left' %}</button>
+            <button class="pd-nav-btn pd-nav-next">{% render 'svg-icons', icon: 'chevron-right' %}</button>
+          {%- endif -%}
+        </div>
+
+        {%- if product.images.size > 1 -%}
+          <div class="pd-thumbnails">
+            {%- for image in product.images -%}
+              <button class="pd-thumb {% if forloop.first %}active{% endif %}" data-img-src="{{ image | image_url: width: 800 }}">
+                <img src="{{ image | image_url: width: 120 }}" alt="{{ product.title }} {{ forloop.index }}">
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Product Info {%- endcomment -%}
+      <div class="pd-info-section">
+        {%- if product.type != blank -%}
+          <span class="pd-category">{{ product.type }}</span>
+        {%- endif -%}
+        <h2>{{ product.title }}</h2>
+
+        <div class="pd-price-row">
+          <span class="pd-price">{{ product.price | money }}</span>
+          {%- if product.compare_at_price > product.price -%}
+            <span class="pd-price-original">{{ product.compare_at_price | money }}</span>
+            <span class="pd-discount-badge">{{ 'product.sale' | t }}</span>
+          {%- endif -%}
+        </div>
+
+        <p class="pd-description">{{ product.description }}</p>
+
+        {%- comment -%} Variant Selector {%- endcomment -%}
+        {%- if product.variants.size > 1 -%}
+          <div class="pd-variant-group">
+            <span class="pd-variant-label">{{ 'product.select_variant' | t }}</span>
+            <div class="pd-variant-options">
+              {%- for variant in product.variants -%}
+                <button class="pd-variant-btn {% if variant == product.selected_or_first_available_variant %}active{% endif %}" data-variant-id="{{ variant.id }}">
+                  {{ variant.title }}
+                </button>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Add to Cart Form {%- endcomment -%}
+        <form action="/cart/add" method="post" id="product-form">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+          <div class="pd-quantity-group">
+            <span class="pd-variant-label">{{ 'product.quantity' | t }}</span>
+            <div class="pd-quantity-selector" data-qty-wrapper>
+              <button type="button" class="pd-qty-btn" data-qty-change="-1">−</button>
+              <input class="pd-qty-value" type="number" name="quantity" value="1" min="1" max="99">
+              <button type="button" class="pd-qty-btn" data-qty-change="1">+</button>
+            </div>
+          </div>
+
+          <div class="pd-actions">
+            <button type="submit" class="pd-cta-btn pd-cta-cart" data-add-to-cart data-variant-id="{{ product.selected_or_first_available_variant.id }}">
+              {% render 'svg-icons', icon: 'cart', size: 15 %}
+              {{ 'product.add_to_cart' | t }}
+            </button>
+            <a href="https://wa.me/{{ settings.whatsapp_number }}?text={{ 'Halo Montana! Saya tertarik dengan ' | append: product.title | url_encode }}" target="_blank" rel="noopener noreferrer" class="pd-cta-btn pd-cta-wa">
+              {% render 'svg-icons', icon: 'whatsapp', size: 15 %}
+              {{ 'product.wholesale_wa' | t }}
+            </a>
+          </div>
+        </form>
+
+        {%- comment -%} Marketplace CTAs {%- endcomment -%}
+        <div class="pd-marketplace-section">
+          <span class="pd-variant-label">{{ 'product.buy_marketplace' | t }}</span>
+          <div class="pd-marketplace-grid">
+            {% render 'marketplace-buttons', size: 'product-detail' %}
+          </div>
+        </div>
+
+        {%- comment -%} Features {%- endcomment -%}
+        <div class="pd-features">
+          <div class="pd-feature">{% render 'svg-icons', icon: 'shield-check', size: 13 %}<span>{{ 'product.quality_guarantee' | t }}</span></div>
+          <div class="pd-feature">{% render 'svg-icons', icon: 'truck', size: 13 %}<span>{{ 'product.ready_ship' | t }}</span></div>
+          <div class="pd-feature">{% render 'svg-icons', icon: 'rotate-ccw', size: 13 %}<span>{{ 'product.returnable' | t }}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

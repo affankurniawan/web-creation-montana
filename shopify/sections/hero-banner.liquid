@@ -1,0 +1,42 @@
+<section class="hero-section">
+  {%- if section.settings.image != blank -%}
+    <div class="hero-bg" style="background-image: url('{{ section.settings.image | image_url: width: 1920 }}')"></div>
+  {%- else -%}
+    <div class="hero-bg" style="background-image: url('{{ 'banner.webp' | asset_url }}')"></div>
+  {%- endif -%}
+  <div class="container hero-content">
+    <div class="hero-text-box">
+      <div class="hero-actions custom-cta-positioning">
+        <a href="{{ section.settings.cta_url | default: '/collections/all' }}" class="btn btn-primary cta-btn">
+          {{ section.settings.cta_text }}
+          {% render 'svg-icons', icon: 'arrow-right', size: 18 %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Gambar Banner"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Teks Tombol CTA",
+      "default": "Belanja Kebutuhan"
+    },
+    {
+      "type": "text",
+      "id": "cta_url",
+      "label": "URL Tombol CTA",
+      "default": "/collections/all"
+    }
+  ]
+}
+{% endschema %}

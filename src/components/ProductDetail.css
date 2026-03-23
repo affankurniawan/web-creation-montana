@@ -65,12 +65,90 @@
 .pd-image-section {
   background: var(--color-gray-50);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl) 0 0 var(--radius-xl);
   position: relative;
   overflow: hidden;
+}
+
+/* Gallery */
+.pd-gallery {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-main-img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.pd-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-gray-700);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  z-index: 3;
+}
+
+.pd-nav-btn:hover {
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.pd-nav-prev { left: 8px; }
+.pd-nav-next { right: 8px; }
+
+/* Thumbnails */
+.pd-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: var(--spacing-md);
+  justify-content: center;
+}
+
+.pd-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  padding: 3px;
+  background: var(--color-white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.pd-thumb.active {
+  border-color: var(--color-yellow);
+}
+
+.pd-thumb:hover:not(.active) {
+  border-color: var(--color-gray-300);
+}
+
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .pd-image-section img {

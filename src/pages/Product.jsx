@@ -14,7 +14,10 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
     {
       id: 1,
       name: 'MONTANA Kalkulator 8 Digit Big Display 2 Power MTC-200 P',
-      img: '/MONTANA Kalkulator Alat Hitung 8 Digit Calculator Big Display 2 Power MTC-200 P.png',
+      img: '/katalog/kalkulator-mtc200p.png',
+      images: [
+        '/katalog/kalkulator-mtc200p.png'
+      ],
       price: 'Rp 0',
       originalPrice: 'Rp 0',
       tag: 'Terlaris',
@@ -26,7 +29,10 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
     {
       id: 2,
       name: 'MONTANA Spidol Permanen Round Tip Permanent Marker MP-12',
-      img: '/MONTANA Spidol Permanen Round Tip Permanent Marker MP-12 Retail.png',
+      img: '/katalog/spidol-mp12.png',
+      images: [
+        '/katalog/spidol-mp12.png'
+      ],
       price: 'Rp 0',
       originalPrice: 'Rp 0',
       tag: 'Promo',
@@ -38,7 +44,10 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
     {
       id: 3,
       name: 'MONTANA Glue Stick Lem Batang 25g Perekat Serbaguna GS-25',
-      img: '/MONTANA Glue Stick Lem Batang 25g Excellent Adhesive Perekat Serbaguna GS-25Retail.webp',
+      img: '/katalog/lem-gs25.webp',
+      images: [
+        '/katalog/lem-gs25.webp'
+      ],
       price: 'Rp 0',
       originalPrice: 'Rp 0',
       tag: 'Terbaru',
@@ -50,7 +59,10 @@ export default function Product({ setPage, addToCart, openProductDetail }) {
     {
       id: 4,
       name: 'MONTANA Gunting Stainless Steel Multipurpose STI-165',
-      img: '/MONTANA Scissors Gunting Stainless Steel Multipurpose Kuat Tajam Anti Karat STI-165Retail.webp',
+      img: '/katalog/gunting-sti165.webp',
+      images: [
+        '/katalog/gunting-sti165.webp'
+      ],
       price: 'Rp 0',
       originalPrice: 'Rp 0',
       tag: 'Promo',

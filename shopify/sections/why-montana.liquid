@@ -1,0 +1,59 @@
+<section class="section why-montana bg-off-white">
+  <div class="container grid grid-cols-2 gap-4 items-center">
+    <div class="why-visual">
+      {%- if section.settings.image != blank -%}
+        <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.heading }}" class="rounded-shadow">
+      {%- else -%}
+        <img src="{{ 'why-montana.png' | asset_url }}" alt="{{ section.settings.heading }}" class="rounded-shadow">
+      {%- endif -%}
+    </div>
+    <div class="why-text">
+      <span class="section-label">{{ section.settings.label }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+      <ul class="why-list">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>
+            {% render 'svg-icons', icon: 'shield-check', size: 22 %}
+            <div><strong>{{ block.settings.title }}:</strong> {{ block.settings.description }}</div>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <a href="{{ section.settings.cta_url }}" class="btn btn-secondary mt-3">
+        {{ section.settings.cta_text }}
+        {% render 'svg-icons', icon: 'arrow-right' %}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why Montana",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Gambar" },
+    { "type": "text", "id": "label", "label": "Label", "default": "Tentang Kami" },
+    { "type": "text", "id": "heading", "label": "Judul", "default": "Mengapa Montana?" },
+    { "type": "textarea", "id": "description", "label": "Deskripsi", "default": "Kami percaya alat yang baik tidak boleh sulit dijangkau. Montana adalah merek bernilai cerdas yang dirancang untuk membuat produk sehari-hari berkualitas tinggi lebih mudah diakses." },
+    { "type": "text", "id": "cta_text", "label": "Teks Tombol", "default": "Pelajari Lebih Lanjut" },
+    { "type": "text", "id": "cta_url", "label": "URL Tombol", "default": "/pages/about" }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Keunggulan",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Judul", "default": "Tahan lama" },
+        { "type": "text", "id": "description", "label": "Deskripsi", "default": "Kebutuhan tahan lama untuk penggunaan sehari-hari." }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "point", "settings": { "title": "Tahan lama", "description": "Kebutuhan tahan lama untuk penggunaan sehari-hari." } },
+      { "type": "point", "settings": { "title": "Nilai cerdas", "description": "Kualitas yang sepadan dengan harganya." } },
+      { "type": "point", "settings": { "title": "Fungsional", "description": "Presentasi bersih dan kinerja tepercaya." } }
+    ]
+  }
+}
+{% endschema %}
