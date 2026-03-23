@@ -20,9 +20,18 @@
 
     {%- comment -%} Desktop Navigation {%- endcomment -%}
     <nav class="desktop-nav">
-      {%- for link in section.settings.menu.links -%}
-        <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
-      {%- endfor -%}
+      {%- assign menu = linklists[section.settings.menu] -%}
+      {%- if menu.links.size > 0 -%}
+        {%- for link in menu.links -%}
+          <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">Beranda</a>
+        <a href="/pages/tentang-kami" class="{% if request.path contains 'tentang' %}active{% endif %}">Tentang Kami</a>
+        <a href="/collections/all" class="{% if request.path contains 'collections' %}active{% endif %}">Katalog Produk</a>
+        <a href="/blogs/news" class="{% if request.path contains 'blog' %}active{% endif %}">Blog</a>
+        <a href="/pages/hubungi-kami" class="{% if request.path contains 'hubungi' or request.path contains 'contact' %}active{% endif %}">Hubungi Kami</a>
+      {%- endif -%}
     </nav>
 
     {%- comment -%} Actions {%- endcomment -%}
@@ -49,13 +58,10 @@
       </div>
       <div class="search-results">
         <ul>
-          {%- for link in section.settings.search_menu.links -%}
-            <li>
-              <a href="{{ link.url }}" style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none">
-                <span class="result-title">{{ link.title }}</span>
-              </a>
-            </li>
-          {%- endfor -%}
+          <li><a href="/collections/all" style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none"><span class="result-title">Katalog Produk</span><span class="result-type">Jelajahi</span></a></li>
+          <li><a href="/pages/hubungi-kami" style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none"><span class="result-title">Pesanan Grosir via WhatsApp</span><span class="result-type">Layanan</span></a></li>
+          <li><a href="/pages/tentang-kami" style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none"><span class="result-title">Tentang Montana</span><span class="result-type">Informasi</span></a></li>
+          <li><a href="/blogs/news" style="display:flex;justify-content:space-between;align-items:center;width:100%;text-decoration:none"><span class="result-title">Blog</span><span class="result-type">Halaman</span></a></li>
         </ul>
       </div>
     </div>
@@ -70,12 +76,6 @@
       "type": "link_list",
       "id": "menu",
       "label": "Menu Navigasi",
-      "default": "main-menu"
-    },
-    {
-      "type": "link_list",
-      "id": "search_menu",
-      "label": "Rekomendasi Pencarian",
       "default": "main-menu"
     }
   ]
