@@ -1,6 +1,6 @@
 <div class="announcement-bar">
   {{ section.settings.text }}
-  <a href="{{ section.settings.link_url }}">{{ section.settings.link_text }}</a>
+  <a href="{{ section.settings.link_url | default: '/collections/all' }}">{{ section.settings.link_text }}</a>
 </div>
 
 {% schema %}
@@ -20,7 +20,7 @@
       "default": "Belanja Sekarang →"
     },
     {
-      "type": "url",
+      "type": "text",
       "id": "link_url",
       "label": "URL Link",
       "default": "/collections/all"

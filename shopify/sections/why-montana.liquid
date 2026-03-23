@@ -19,7 +19,7 @@
           </li>
         {%- endfor -%}
       </ul>
-      <a href="{{ section.settings.cta_url }}" class="btn btn-secondary mt-3">
+      <a href="{{ section.settings.cta_url | default: '/pages/tentang-kami' }}" class="btn btn-secondary mt-3">
         {{ section.settings.cta_text }}
         {% render 'svg-icons', icon: 'arrow-right' %}
       </a>

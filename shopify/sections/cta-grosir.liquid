@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="text-white mb-2">{{ section.settings.heading }}</h2>
     <p class="text-gray-500 max-w-600 mx-auto mb-4">{{ section.settings.description }}</p>
-    <a href="{{ section.settings.cta_url }}" class="btn btn-primary btn-lg">
+    <a href="{{ section.settings.cta_url | default: '/pages/hubungi-kami' }}" class="btn btn-primary btn-lg">
       {{ section.settings.cta_text }}
       {% render 'svg-icons', icon: 'arrow-right', size: 18 %}
     </a>
